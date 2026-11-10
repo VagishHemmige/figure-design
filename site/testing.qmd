@@ -11,7 +11,7 @@ title: "What's been tested"
 | Claude manifest and marketplace are valid | Passed | `claude plugin validate` with Claude Code 2.1.322. One warning: no icon. |
 | Claude installs the plugin and loads the skill | Passed | Added the repository folder as a local marketplace, installed `figure-design@figure-design`, and confirmed the skill `figure-to-interactive` loaded. |
 | Codex lists and installs the plugin | Passed | Same, with Codex CLI 0.167.0: the plugin showed as `installed, enabled`, version 0.1.5, with the skill in its cache. |
-| Installing straight from GitHub | Not yet | The tests above used a local copy of the repository, before these files reached the main branch. |
+| Installing straight from GitHub | Passed | Repeated both installs from `VagishHemmige/figure-design` on GitHub, using the pull-request branch before it was merged: Claude Code loaded the skill, and Codex showed the plugin as `installed, enabled`. |
 | Claude app (web, desktop, Cowork) | Not yet | |
 | ChatGPT Plugin Creator from this repository | Not yet | The plugin was first built in ChatGPT, not from this repository. |
 
