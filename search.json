@@ -1,0 +1,568 @@
+[
+  {
+    "objectID": "install.html",
+    "href": "install.html",
+    "title": "Install",
+    "section": "",
+    "text": "Written for version 0.1.5. Commands checked on 10 November 2026; see What’s been tested for exactly how. Menus change; if what you see differs, tell the maintainer through a GitHub issue.\nInstalling the plugin gives the assistant instructions only. It adds no access to your files, accounts or computer; what the assistant can reach is set in the app.\nThe repository is its own marketplace (a marketplace is a list of plugins kept in a GitHub repository), so every route below starts from VagishHemmige/figure-design.\nPick the assistant you use.",
+    "crumbs": [
+      "Install"
+    ]
+  },
+  {
+    "objectID": "install.html#claude-on-the-web-the-desktop-app-or-cowork",
+    "href": "install.html#claude-on-the-web-the-desktop-app-or-cowork",
+    "title": "Install",
+    "section": "Claude (on the web, the desktop app or Cowork)",
+    "text": "Claude (on the web, the desktop app or Cowork)\nYou need a paid Claude plan (Pro, Max, Team or Enterprise).\nAdd the plugin’s marketplace:\n\nIn Claude, open Settings, then Customize.\nOpen the Plugins tab.\nClick Add, then Add marketplace.\nChoose Add from a repository.\nType VagishHemmige/figure-design and confirm.\n\nIf your organization limits which marketplaces you can add, Claude will refuse it; ask your administrator.\nInstall the plugin:\n\nStill in Customize → Plugins, open the Discover tab.\nSelect Interactive Figure Design and click Add.\n\nThese are the same steps as for R Analysis Workflow, which has screenshots. Source: Anthropic, Use plugins in Claude. Not yet tried in the Claude app with this plugin.",
+    "crumbs": [
+      "Install"
+    ]
+  },
+  {
+    "objectID": "install.html#claude-code",
+    "href": "install.html#claude-code",
+    "title": "Install",
+    "section": "Claude Code",
+    "text": "Claude Code\nYou need Claude Code version 2.1.292 or later for the one-line install. In your terminal (not inside a Claude Code session):\nclaude plugin install figure-design --marketplace VagishHemmige/figure-design\nOn an older version, use two commands instead:\nclaude plugin marketplace add VagishHemmige/figure-design\nclaude plugin install figure-design@figure-design\nTo check, run claude plugin list: you should see figure-design@figure-design. The plugin loads the next time you start Claude Code. To update later:\nclaude plugin update figure-design@figure-design\nSources: Claude Code docs, Install and manage plugins and Create a marketplace.",
+    "crumbs": [
+      "Install"
+    ]
+  },
+  {
+    "objectID": "install.html#codex",
+    "href": "install.html#codex",
+    "title": "Install",
+    "section": "Codex",
+    "text": "Codex\nIn your terminal:\ncodex plugin marketplace add VagishHemmige/figure-design\ncodex plugin add figure-design@figure-design\nTo check, run codex plugin list: you should see figure-design@figure-design as installed, enabled. To pick up a new version, run codex plugin marketplace upgrade figure-design.\nSource: OpenAI, Build plugins.",
+    "crumbs": [
+      "Install"
+    ]
+  },
+  {
+    "objectID": "install.html#chatgpt",
+    "href": "install.html#chatgpt",
+    "title": "Install",
+    "section": "ChatGPT",
+    "text": "ChatGPT\nIn ChatGPT you make the plugin with OpenAI’s Plugin Creator, pointing it at this repository. Whether Plugin Creator is available depends on your plan and workspace.\n\nStart a new conversation.\nType @, search for Plugin Creator, and select it.\nAsk it, in your own words: Create a plugin from https://github.com/VagishHemmige/figure-design.\nAnswer its questions and follow its prompts. Check that the name is Interactive Figure Design.\n\nUse it: in a new conversation, type @, start typing “Interactive Figure Design”, and select it under Plugins.\nNot yet tried from this repository. The plugin was first built in ChatGPT, and the same route works for R Analysis Workflow.",
+    "crumbs": [
+      "Install"
+    ]
+  },
+  {
+    "objectID": "reference/checklist.html",
+    "href": "reference/checklist.html",
+    "title": "Inspection checklist",
+    "section": "",
+    "text": "Written for version 0.1.5. Source: inspection-checklist.md.\nThe assistant runs these checks on the rendered figure before showing it to you. They add no extra approval steps; How it works sets those.",
+    "crumbs": [
+      "What the plugin reads",
+      "Inspection checklist"
+    ]
+  },
+  {
+    "objectID": "reference/checklist.html#content-and-connections",
+    "href": "reference/checklist.html#content-and-connections",
+    "title": "Inspection checklist",
+    "section": "Content and connections",
+    "text": "Content and connections\n\nEach view says what was agreed, including the decisions and exceptions it needs.\nPlanned, live and unconfirmed behaviour are told apart, and each output shows only the sources that really feed it.\nEvery arrow is traced end to end: right start, right end, right direction, right meaning. Equivalent inputs don’t look like a sequence.\nObjects that appear in several views have the same label, look and role in each.\nA prerequisite sits beside the step it affects, not in an unrelated footer.",
+    "crumbs": [
+      "What the plugin reads",
+      "Inspection checklist"
+    ]
+  },
+  {
+    "objectID": "reference/checklist.html#geometry-checked-by-code-where-practical",
+    "href": "reference/checklist.html#geometry-checked-by-code-where-practical",
+    "title": "Inspection checklist",
+    "section": "Geometry, checked by code where practical",
+    "text": "Geometry, checked by code where practical\n\nText and images fit their boxes and the canvas, with nothing clipped or overlapping.\nNo collisions between text and icons, labels and arrows, or arrows and boxes, apart from intended arrow ends.\nJunctions, arrowheads, crossings, reversals and avoidable bends are inspected.\nColumns line up; padding and spacing are consistent.\nThe SVG parses, every referenced asset exists, and exports match the current source.\n\nA passing geometry check isn’t proof of good design, and a trivial edit doesn’t need a test harness.",
+    "crumbs": [
+      "What the plugin reads",
+      "Inspection checklist"
+    ]
+  },
+  {
+    "objectID": "reference/checklist.html#looking-at-it",
+    "href": "reference/checklist.html#looking-at-it",
+    "title": "Inspection checklist",
+    "section": "Looking at it",
+    "text": "Looking at it\n\nAt its intended size, the main action is obvious, the start and end are clear, grouping helps, and contrast is enough.\nNo crowded boxes next to large empty areas; fix the layout before adding more arrow routing.\nIllustrations match each other and mean something; logos are genuine.\nPhone width is checked honestly. If it’s illegible, there’s an enlarged view or agreed crops, keeping the approved illustration.\nEvery changed view and export is re-inspected; old screenshots don’t count.",
+    "crumbs": [
+      "What the plugin reads",
+      "Inspection checklist"
+    ]
+  },
+  {
+    "objectID": "reference/checklist.html#independent-review-for-substantial-work",
+    "href": "reference/checklist.html#independent-review-for-substantial-work",
+    "title": "Inspection checklist",
+    "section": "Independent review for substantial work",
+    "text": "Independent review for substantial work\nThe reviewer gets the current render, the content brief, the style reference, the target size and the planned-versus-live distinctions. They report where each problem is, what it is, why it matters and the smallest fix, without changing the content. Factual review is kept separate from visual design review. Minor edits don’t trigger a full review.",
+    "crumbs": [
+      "What the plugin reads",
+      "Inspection checklist"
+    ]
+  },
+  {
+    "objectID": "reference/checklist.html#interactive-and-delivery-checks",
+    "href": "reference/checklist.html#interactive-and-delivery-checks",
+    "title": "Inspection checklist",
+    "section": "Interactive and delivery checks",
+    "text": "Interactive and delivery checks\nWhen the figure is interactive: exact-region highlight, complete hover, moving the pointer into the panel, click to pin, touch, keyboard and focus, Escape or close, zoom and pan, behaviour at the screen edges, and scrolling, in every view. The text account and static exports stay current.\nThe figure is shown through the chat’s own viewer; local file links are extra, not something a phone can open. The assistant reports which browsers and devices it actually tested, which tests were simulated, and what it couldn’t check.",
+    "crumbs": [
+      "What the plugin reads",
+      "Inspection checklist"
+    ]
+  },
+  {
+    "objectID": "reference/principles.html",
+    "href": "reference/principles.html",
+    "title": "Design principles",
+    "section": "",
+    "text": "Written for version 0.1.5. Source: design-principles.md.\nThese are practical uses of established guidance, not rigid rules about appearance. The plugin uses them to find specific communication problems, never to strip out needed content or restyle a figure you’ve accepted.",
+    "crumbs": [
+      "What the plugin reads",
+      "Design principles"
+    ]
+  },
+  {
+    "objectID": "reference/principles.html#composition-before-decoration",
+    "href": "reference/principles.html#composition-before-decoration",
+    "title": "Design principles",
+    "section": "Composition before decoration",
+    "text": "Composition before decoration\nChoose an orientation and reading order that show the relationships. Steps in sequence line up; equivalent inputs get equal weight; exceptions sit beside the step they affect. Leave room for branching and merging arrows before placing boxes. Avoid unnecessary crossings, bends and reversals. Use clear junctions and arrowheads; two things being close together must not be the only sign that they’re related.\nBackground: yWorks on layered graph layout and orthogonal edge routing. These describe the ideas; the plugin doesn’t need their software, and automatic layouts still have to be inspected.",
+    "crumbs": [
+      "What the plugin reads",
+      "Design principles"
+    ]
+  },
+  {
+    "objectID": "reference/principles.html#hierarchy-and-grouping",
+    "href": "reference/principles.html#hierarchy-and-grouping",
+    "title": "Design principles",
+    "section": "Hierarchy and grouping",
+    "text": "Hierarchy and grouping\nMake the main explanation dominate through size, position, contrast and white space. Group related elements by placing them close together or inside a shared region. Keep alignment and spacing consistent. Important distinctions shouldn’t rely on colour alone. Setup steps and footnotes shouldn’t look as important as the central action.\nBackground: Nielsen Norman Group on principles of visual design, proximity and visual hierarchy.",
+    "crumbs": [
+      "What the plugin reads",
+      "Design principles"
+    ]
+  },
+  {
+    "objectID": "reference/principles.html#text-illustrations-and-shared-objects",
+    "href": "reference/principles.html#text-illustrations-and-shared-objects",
+    "title": "Design principles",
+    "section": "Text, illustrations and shared objects",
+    "text": "Text, illustrations and shared objects\nUse a restrained set of type sizes, readable line lengths and clear space around labels. Measure the rendered text and make the container fit it, rather than shrinking the text until it fits. The same object has the same role, colour and illustration in every view. Illustrations other than logos form one family; logos are authentic and their source is kept. Decoration must not change what the figure says.",
+    "crumbs": [
+      "What the plugin reads",
+      "Design principles"
+    ]
+  },
+  {
+    "objectID": "reference/principles.html#audience-and-medium",
+    "href": "reference/principles.html#audience-and-medium",
+    "title": "Design principles",
+    "section": "Audience and medium",
+    "text": "Audience and medium\nChoose the content and the way it’s drawn for the reader and where they’ll see it. The overview has to work before anything is clicked. A large figure scaled down can be technically complete and still unreadable, so inspect it at the size it will be seen, and plan enlarged viewing or section crops when needed.\nBackground: Rougier, Droettboom and Bourne, “Ten Simple Rules for Better Figures” (PLOS Computational Biology, 2014). That paper is general advice for scientific figures, not a standard for workflow diagrams; the plugin’s checks are its own summary rather than rules quoted from any one source.",
+    "crumbs": [
+      "What the plugin reads",
+      "Design principles"
+    ]
+  },
+  {
+    "objectID": "using/static.html",
+    "href": "using/static.html",
+    "title": "Make a static figure",
+    "section": "",
+    "text": "Written for version 0.1.5.\nStages 1 to 4 of How it works. The result is one approved static SVG for each view.",
+    "crumbs": [
+      "Using the plugin",
+      "Make a static figure"
+    ]
+  },
+  {
+    "objectID": "using/static.html#ask",
+    "href": "using/static.html#ask",
+    "title": "Make a static figure",
+    "section": "Ask",
+    "text": "Ask\nSay what you want explained, in your own words. For example:\n\n“Draw a figure explaining how our weekly literature search works, for clinicians who’ll use the results.”\n“I need a diagram of the study design for the methods page: two arms, a run-in period, and the follow-up visits.”\n\nIf you already have an exact outline, paste it and say “draw this”. The assistant treats an exact outline you supply as confirmed.",
+    "crumbs": [
+      "Using the plugin",
+      "Make a static figure"
+    ]
+  },
+  {
+    "objectID": "using/static.html#what-the-assistant-asks-you",
+    "href": "using/static.html#what-the-assistant-asks-you",
+    "title": "Make a static figure",
+    "section": "What the assistant asks you",
+    "text": "What the assistant asks you\nIt asks only what changes the figure, at most three questions at a time:\n\nwhat the figure should answer, for whom, and what they should understand afterwards;\nwhich situations it must cover, such as first use, routine running, or what happens when something is missing;\none view or several, and what each view explains.\n\nIf you say “don’t ask, just draw”, it does, and states the assumptions that matter.",
+    "crumbs": [
+      "Using the plugin",
+      "Make a static figure"
+    ]
+  },
+  {
+    "objectID": "using/static.html#confirm-the-outline",
+    "href": "using/static.html#confirm-the-outline",
+    "title": "Make a static figure",
+    "section": "Confirm the outline",
+    "text": "Confirm the outline\nBefore drawing, the assistant writes each view as a plain-language outline: who does what, inputs, decisions, what is read or saved, outputs, and waits. It marks what is live, planned or not yet confirmed.\nRead it as you would a colleague’s description of your process. This is where most later rounds are saved: a wrong step caught here is one sentence to fix, not a redrawn figure.",
+    "crumbs": [
+      "Using the plugin",
+      "Make a static figure"
+    ]
+  },
+  {
+    "objectID": "using/static.html#approve-each-svg",
+    "href": "using/static.html#approve-each-svg",
+    "title": "Make a static figure",
+    "section": "Approve each SVG",
+    "text": "Approve each SVG\nThe assistant draws each view, checks the rendered picture, and for a substantial figure gets an independent design review when the app allows. Then it shows you each view in the chat.\nSay plainly which views you approve. Approving the content earlier, or simply not replying, does not count as approving the picture.\nFor a small change later (a word, a logo, spacing), the assistant makes the change and checks it; it doesn’t restart the questions or the full review.",
+    "crumbs": [
+      "Using the plugin",
+      "Make a static figure"
+    ]
+  },
+  {
+    "objectID": "using/static.html#tips",
+    "href": "using/static.html#tips",
+    "title": "Make a static figure",
+    "section": "Tips",
+    "text": "Tips\n\nSay who will read it and where. A slide, a printed page and a phone each need different text sizes.\nPoint out what’s wrong, not just that it’s wrong. “Arrow from B goes to the wrong box” is faster than “the flow looks off”.\nKeep the outline as the record. If the figure and the outline disagree, fix the outline first.",
+    "crumbs": [
+      "Using the plugin",
+      "Make a static figure"
+    ]
+  },
+  {
+    "objectID": "using/quarto.html",
+    "href": "using/quarto.html",
+    "title": "Put it on a Quarto site",
+    "section": "",
+    "text": "Written for version 0.1.5.\nPart of stage 6 of How it works. Ask for it when the figure will live on a Quarto website, such as an analysis project’s explainer site.",
+    "crumbs": [
+      "Using the plugin",
+      "Put it on a Quarto site"
+    ]
+  },
+  {
+    "objectID": "using/quarto.html#ask",
+    "href": "using/quarto.html#ask",
+    "title": "Put it on a Quarto site",
+    "section": "Ask",
+    "text": "Ask\n“Give me this figure ready for my Quarto site.” Say which site and page if the assistant can see the repository.",
+    "crumbs": [
+      "Using the plugin",
+      "Put it on a Quarto site"
+    ]
+  },
+  {
+    "objectID": "using/quarto.html#what-you-get",
+    "href": "using/quarto.html#what-you-get",
+    "title": "Put it on a Quarto site",
+    "section": "What you get",
+    "text": "What you get\n\nThe files: the SVG for a static figure, or the HTML, scripts and assets for an interactive one, with no server or Quarto extension needed.\nA minimal example of how to include it on a page.\nA deliberate choice between embedding the figure directly in the page and loading it in an iframe. The assistant explains which it chose and why.\n\nIt checks the paths, that the assets are copied when the site renders, the height on the page, and that the figure still works after Quarto renders the page. It doesn’t assume an existing hotspot extension reproduces the design without checking.",
+    "crumbs": [
+      "Using the plugin",
+      "Put it on a Quarto site"
+    ]
+  },
+  {
+    "objectID": "using/quarto.html#a-static-figure",
+    "href": "using/quarto.html#a-static-figure",
+    "title": "Put it on a Quarto site",
+    "section": "A static figure",
+    "text": "A static figure\nA static SVG goes on a page like any image:\n![What the figure shows, in one sentence.](images/my-figure.svg){fig-alt=\"A full description for screen readers.\"}\nThe figure on How it works is included exactly this way.",
+    "crumbs": [
+      "Using the plugin",
+      "Put it on a Quarto site"
+    ]
+  },
+  {
+    "objectID": "using/quarto.html#publishing",
+    "href": "using/quarto.html#publishing",
+    "title": "Put it on a Quarto site",
+    "section": "Publishing",
+    "text": "Publishing\nThe assistant publishes only what you’ve authorised, and tells you the result, anything it couldn’t check, and any decision still open.",
+    "crumbs": [
+      "Using the plugin",
+      "Put it on a Quarto site"
+    ]
+  },
+  {
+    "objectID": "how-it-works.html",
+    "href": "how-it-works.html",
+    "title": "How it works",
+    "section": "",
+    "text": "Written for version 0.1.5.\nThe plugin has one skill, figure-to-interactive. It takes every figure through six stages, and two of them wait for you.",
+    "crumbs": [
+      "How it works"
+    ]
+  },
+  {
+    "objectID": "how-it-works.html#the-stages",
+    "href": "how-it-works.html#the-stages",
+    "title": "How it works",
+    "section": "The stages",
+    "text": "The stages\n\nAgree on the content. For a new figure, the assistant asks at most three questions at a time: who the figure is for, which situations it must cover, and how many views it needs. It then writes a plain-language outline of each view: who does what, what is read or saved, the decisions, and the outputs. You confirm the outline. Agreeing on tab names is not agreeing on what’s in them.\nDesign the flow, then the SVG. The layout comes from the relationships: steps in order, equal inputs side by side, exceptions next to the step they affect, and space kept for arrows. Then it draws one static SVG for each view.\nInspect and review. The assistant checks the rendered picture for clipped or overlapping text, wrong or misleading arrows, and hierarchy. For a substantial figure it asks a separate reviewer for a design review when the app allows that, and says so if it can’t.\nApprove each SVG. Each view is shown in the chat. You approve each one. Content approval or silence doesn’t count, and nothing interactive is built until every view is approved.\nAdd interactivity, if you ask. Hover on a desktop, tap on a phone and keyboard access reveal more detail, without changing the approved figure.\nVerify and deliver. The assistant tests what applies, including on real devices where possible, says what it could and couldn’t test, and hands over the files, with a Quarto example if you want one.",
+    "crumbs": [
+      "How it works"
+    ]
+  },
+  {
+    "objectID": "how-it-works.html#where-the-rules-live",
+    "href": "how-it-works.html#where-the-rules-live",
+    "title": "How it works",
+    "section": "Where the rules live",
+    "text": "Where the rules live\nThe stages above summarise the skill file, SKILL.md. It is the authoritative version; the reference pages explain the principles and checks it relies on.",
+    "crumbs": [
+      "How it works"
+    ]
+  },
+  {
+    "objectID": "using/interactive.html",
+    "href": "using/interactive.html",
+    "title": "Make it interactive",
+    "section": "",
+    "text": "Written for version 0.1.5.\nStage 5 of How it works. It starts only after you’ve approved every static view, and only if you ask for it.",
+    "crumbs": [
+      "Using the plugin",
+      "Make it interactive"
+    ]
+  },
+  {
+    "objectID": "using/interactive.html#ask",
+    "href": "using/interactive.html#ask",
+    "title": "Make it interactive",
+    "section": "Ask",
+    "text": "Ask\n“Now make the approved figure interactive.” If you want something specific, such as one view per tab, say so.",
+    "crumbs": [
+      "Using the plugin",
+      "Make it interactive"
+    ]
+  },
+  {
+    "objectID": "using/interactive.html#what-you-get",
+    "href": "using/interactive.html#what-you-get",
+    "title": "Make it interactive",
+    "section": "What you get",
+    "text": "What you get\nThe approved figure stays the figure. Regions of it open to show more detail:\n\nOn a desktop, hovering briefly over a region opens its full explanation; you can move the pointer into it, and click to keep it open.\nOn a phone, tapping the whole region opens the same content.\nWith a keyboard, each region can be reached with Tab, has a visible focus outline, and closes with Escape.\n\nOnly the region you selected is highlighted. Panels shouldn’t flicker, cover what you tapped, or close by accident.\nIf the whole figure is too small to read at phone width, the assistant adds a way to enlarge or pan it, or agreed crops of each section. It doesn’t swap your illustrated figure for a text list unless you agree. There is always a plain-text account of the content for screen readers and for anyone who can’t hover.",
+    "crumbs": [
+      "Using the plugin",
+      "Make it interactive"
+    ]
+  },
+  {
+    "objectID": "using/interactive.html#what-stays-fixed",
+    "href": "using/interactive.html#what-stays-fixed",
+    "title": "Make it interactive",
+    "section": "What stays fixed",
+    "text": "What stays fixed\nThe approved composition, illustrations, colours, relationships and content don’t change. A new view goes back through content confirmation and SVG approval; small refinements to one view don’t reopen the others.",
+    "crumbs": [
+      "Using the plugin",
+      "Make it interactive"
+    ]
+  },
+  {
+    "objectID": "using/interactive.html#testing",
+    "href": "using/interactive.html#testing",
+    "title": "Make it interactive",
+    "section": "Testing",
+    "text": "Testing\nThe assistant tests hover, pinning, closing, keyboard, touch, zoom, the edges of the screen, scrolling and links, as far as it can. It tells you which tests were on a real phone or browser and which were simulated.",
+    "crumbs": [
+      "Using the plugin",
+      "Make it interactive"
+    ]
+  },
+  {
+    "objectID": "reference/style.html",
+    "href": "reference/style.html",
+    "title": "The house style",
+    "section": "",
+    "text": "Written for version 0.1.5. Source: reference-assets.md and design-lessons.md.\nThe plugin’s default look comes from one real figure: the maintainer’s illustrated workflow for an automated curation system for TransplantID.net. Before a substantial new design, the assistant renders and studies it rather than working from a remembered description.",
+    "crumbs": [
+      "What the plugin reads",
+      "The house style"
+    ]
+  },
+  {
+    "objectID": "reference/style.html#what-the-style-is",
+    "href": "reference/style.html#what-the-style-is",
+    "title": "The house style",
+    "section": "What the style is",
+    "text": "What the style is\n\nNumbered pastel phases, each a group of related steps.\nStrong navy headings and short, informative bullets.\nMeaningful small illustrations from one consistent family, matched to the subject: teaching pictures for teaching, documents for CVs, browsers for websites.\nRecognisable logos of the services actually involved.\nClearly directed, labelled arrows, with pending and decision paths drawn so they look different.\n\nIt is deliberately information-rich. The plugin is told not to turn it into sparse cards or another look just to satisfy a general rule, and to explain the trade-off when a change would help.",
+    "crumbs": [
+      "What the plugin reads",
+      "The house style"
+    ]
+  },
+  {
+    "objectID": "reference/style.html#what-it-borrows-and-what-it-doesnt",
+    "href": "reference/style.html#what-it-borrows-and-what-it-doesnt",
+    "title": "The house style",
+    "section": "What it borrows and what it doesn’t",
+    "text": "What it borrows and what it doesn’t\nThe assistant reuses the visual language and adapts the layout and content to the new subject. It doesn’t copy the transplant content, and it builds new, editable text and shapes rather than reusing the reference’s artwork.\nThe reference figure itself is not shown on this site. It contains embedded artwork, logos and a font, and the plugin’s notes say the reference gives no new right to redistribute them, so it is used only as a reference inside the plugin.",
+    "crumbs": [
+      "What the plugin reads",
+      "The house style"
+    ]
+  },
+  {
+    "objectID": "reference/style.html#the-interactive-model",
+    "href": "reference/style.html#the-interactive-model",
+    "title": "The house style",
+    "section": "The interactive model",
+    "text": "The interactive model\nAfter the static figure is approved, the default model for an interactive version is the reference’s companion website: the illustrated overview stays the anchor, and regions expand on hover or tap. The plugin’s notes say that site’s late hover changes were never fully tested on phones or across browsers, so the assistant checks the new version itself rather than assuming the reference works everywhere.",
+    "crumbs": [
+      "What the plugin reads",
+      "The house style"
+    ]
+  },
+  {
+    "objectID": "reference/style.html#lessons-from-earlier-figures",
+    "href": "reference/style.html#lessons-from-earlier-figures",
+    "title": "The house style",
+    "section": "Lessons from earlier figures",
+    "text": "Lessons from earlier figures\n\nA figure can render perfectly and still be wrong. One needed the actual weekly list of actions and the first-use steps, not just a diagram of approvals.\nFixing awkward arrows one by one usually means the layout is wrong. Rearrange the stages first.\nMixing shaded icons with simple line drawings looks disjointed. Logos can differ; other illustrations should match each other.\nA website drawn as an empty rectangle looks unfinished next to a detailed one.\nLinks to files on a Windows computer didn’t open on a phone; a static SVG shown in the chat did.",
+    "crumbs": [
+      "What the plugin reads",
+      "The house style"
+    ]
+  },
+  {
+    "objectID": "reference/files.html",
+    "href": "reference/files.html",
+    "title": "Files in the plugin",
+    "section": "",
+    "text": "Written for version 0.1.5. Browse them on GitHub.\nEverything the assistant reads is in skills/. The other files tell each app how to install it.",
+    "crumbs": [
+      "What the plugin reads",
+      "Files in the plugin"
+    ]
+  },
+  {
+    "objectID": "reference/files.html#the-skill",
+    "href": "reference/files.html#the-skill",
+    "title": "Files in the plugin",
+    "section": "The skill",
+    "text": "The skill\n\n\n\nFile\nWhat it is\n\n\n\n\nskills/figure-to-interactive/SKILL.md\nThe workflow. This is the authoritative version; the references below support it.\n\n\nreferences/content-intake.md\nThe questions to ask and the per-view outline to confirm.\n\n\nreferences/design-principles.md\nDesign principles and their sources.\n\n\nreferences/inspection-checklist.md\nThe inspection checklist.\n\n\nreferences/reference-assets.md\nHow to use the reference figure and website (the house style).\n\n\nreferences/design-lessons.md\nLessons from earlier figures.\n\n\nassets/transplantid-explainer.svg\nThe reference figure, kept as a private reference (see the house style).\n\n\nagents/openai.yaml\nDisplay name and default prompt for Codex. Claude ignores it.",
+    "crumbs": [
+      "What the plugin reads",
+      "Files in the plugin"
+    ]
+  },
+  {
+    "objectID": "reference/files.html#how-each-app-installs-it",
+    "href": "reference/files.html#how-each-app-installs-it",
+    "title": "Files in the plugin",
+    "section": "How each app installs it",
+    "text": "How each app installs it\n\n\n\n\n\n\n\nFile\nRead by\n\n\n\n\nplugin.json\nOpenAI’s apps. Its extensions.com.openai settings take precedence over the file below.\n\n\n.codex-plugin/plugin.json\nCodex, as a compatibility manifest.\n\n\n.claude-plugin/plugin.json\nClaude.\n\n\n.claude-plugin/marketplace.json\nClaude: lists this repository as a marketplace with one plugin.\n\n\n.agents/plugins/marketplace.json\nCodex: the same, in Codex’s format.\n\n\n\nAll five use the name figure-design. The three plugin.json files also carry the version, 0.1.5; when it changes, change it in all three.",
+    "crumbs": [
+      "What the plugin reads",
+      "Files in the plugin"
+    ]
+  },
+  {
+    "objectID": "reference/files.html#not-installed",
+    "href": "reference/files.html#not-installed",
+    "title": "Files in the plugin",
+    "section": "Not installed",
+    "text": "Not installed\nsite/ is the source of this website, and .github/workflows/publish.yml publishes it. Neither is part of the plugin.",
+    "crumbs": [
+      "What the plugin reads",
+      "Files in the plugin"
+    ]
+  },
+  {
+    "objectID": "testing.html",
+    "href": "testing.html",
+    "title": "What’s been tested",
+    "section": "",
+    "text": "Written for version 0.1.5. Last updated 10 November 2026.",
+    "crumbs": [
+      "What's been tested"
+    ]
+  },
+  {
+    "objectID": "testing.html#installing",
+    "href": "testing.html#installing",
+    "title": "What’s been tested",
+    "section": "Installing",
+    "text": "Installing\n\n\n\n\n\n\n\n\nCheck\nResult\nHow\n\n\n\n\nClaude manifest and marketplace are valid\nPassed\nclaude plugin validate with Claude Code 2.1.322. One warning: no icon.\n\n\nClaude installs the plugin and loads the skill\nPassed\nAdded the repository folder as a local marketplace, installed figure-design@figure-design, and confirmed the skill figure-to-interactive loaded.\n\n\nCodex lists and installs the plugin\nPassed\nSame, with Codex CLI 0.167.0: the plugin showed as installed, enabled, version 0.1.5, with the skill in its cache.\n\n\nInstalling straight from GitHub\nPassed\nRepeated both installs from VagishHemmige/figure-design on GitHub, using the pull-request branch before it was merged: Claude Code loaded the skill, and Codex showed the plugin as installed, enabled.\n\n\nClaude app (web, desktop, Cowork)\nNot yet\n\n\n\nChatGPT Plugin Creator from this repository\nNot yet\nThe plugin was first built in ChatGPT, not from this repository.",
+    "crumbs": [
+      "What's been tested"
+    ]
+  },
+  {
+    "objectID": "testing.html#the-workflow-itself",
+    "href": "testing.html#the-workflow-itself",
+    "title": "What’s been tested",
+    "section": "The workflow itself",
+    "text": "The workflow itself\nThe plugin comes from the maintainer’s own figures, including the TransplantID workflow; its lessons record what went wrong along the way. It has not been tested in a structured way, and no one else has used it yet.",
+    "crumbs": [
+      "What's been tested"
+    ]
+  },
+  {
+    "objectID": "testing.html#this-site",
+    "href": "testing.html#this-site",
+    "title": "What’s been tested",
+    "section": "This site",
+    "text": "This site\nRendered with Quarto 1.8.25, the version the publish workflow uses, before the first publish. The workflow figure on How it works was checked at desktop and phone widths; at phone width its one-line descriptions are small, so the page repeats every stage in text.",
+    "crumbs": [
+      "What's been tested"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Interactive Figure Design",
+    "section": "",
+    "text": "Written for version 0.1.5.\nAn early version. It comes from the maintainer’s own figures, such as the TransplantID workflow; it has not yet been used by other people.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#what-it-is",
+    "href": "index.html#what-it-is",
+    "title": "Interactive Figure Design",
+    "section": "What it is",
+    "text": "What it is\nInteractive Figure Design is a plugin for ChatGPT and Claude. A plugin is a set of instructions the assistant reads when a task calls for them, so it works the same way every time and in every chat. This one is for explanatory figures: workflow diagrams, study designs, system overviews and similar pictures that explain how something works.\nWith the plugin installed, you ask in plain words (“Draw a figure explaining how our weekly literature search works”) and the assistant follows the plugin’s steps.\nIt is not for data figures. Plots of real numbers belong in the analysis code that produces them.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#what-it-does-differently",
+    "href": "index.html#what-it-does-differently",
+    "title": "Interactive Figure Design",
+    "section": "What it does differently",
+    "text": "What it does differently\nWithout instructions, an assistant tends to draw first and ask later, which is why explanatory figures often take many rounds. The plugin changes the order:\n\nContent before drawing. The assistant writes out, in plain language, what each view of the figure will explain, and you confirm it before anything is drawn.\nStatic before interactive. Each view is first a static SVG you can look at and approve. Interactivity comes only after that, and only if you ask.\nChecked before shown. The assistant inspects the rendered picture, not just its code, and gets an independent design review for substantial figures when it can.\nYour style, not a generic one. The default look is the information-rich style of the maintainer’s TransplantID figure: numbered pastel phases, strong headings, meaningful small illustrations and clearly labelled arrows.\n\nHow it works shows the six stages.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#where-to-start",
+    "href": "index.html#where-to-start",
+    "title": "Interactive Figure Design",
+    "section": "Where to start",
+    "text": "Where to start\n\nInstall the plugin.\nThen make a static figure, and if you want, make it interactive or put it on a Quarto site.\nTo see what the assistant reads, start with the house style.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#before-you-rely-on-it",
+    "href": "index.html#before-you-rely-on-it",
+    "title": "Interactive Figure Design",
+    "section": "Before you rely on it",
+    "text": "Before you rely on it\nThe plugin guides an assistant; it does not check your facts. Review what the figure says as you would a colleague’s draft before it goes into a paper, a talk or a website. What’s been tested lists what has and has not been checked.\nThe source, including every instruction the assistant reads, is on GitHub.",
+    "crumbs": [
+      "Home"
+    ]
+  }
+]
