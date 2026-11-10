@@ -1,0 +1,4 @@
+interface:
+  display_name: "Interactive Figure Design"
+  short_description: "Design clear figures, then add faithful interactivity"
+  default_prompt: "Use $figure-to-interactive to develop a clear static figure and, when requested, turn it into an interactive explainer."

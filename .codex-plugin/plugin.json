@@ -1,0 +1,20 @@
+{
+  "interface": {
+    "capabilities": [],
+    "category": "Productivity",
+    "defaultPrompt": "Use my figure design preferences to develop a static figure and then, if requested, its interactive version.",
+    "developerName": "Vagish Hemmige",
+    "displayName": "Interactive Figure Design",
+    "longDescription": "Develop clear static figures with audience-aware content and visual review, then add consistent desktop hover, mobile tapping, and portable Quarto-ready interactions when requested.",
+    "shortDescription": "Static to interactive figures"
+  },
+  "name": "figure-design",
+  "version": "0.1.5",
+  "description": "Vagish\u2019s workflow for polished static explanatory figures and faithful portable interactives.",
+  "author": {
+    "name": "Vagish Hemmige",
+    "email": "vagish.hemmige@gmail.com"
+  },
+  "keywords": [],
+  "skills": "./skills"
+}
