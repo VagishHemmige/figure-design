@@ -1,0 +1,14 @@
+{
+  "name": "figure-design",
+  "description": "Interactive Figure Design: polished static explanatory figures and faithful portable interactives.",
+  "owner": {
+    "name": "Vagish Hemmige"
+  },
+  "plugins": [
+    {
+      "name": "figure-design",
+      "source": "./",
+      "description": "Design static explanatory figures and workflow diagrams, get them approved, then add faithful desktop, touch and keyboard interactivity for Quarto."
+    }
+  ]
+}
