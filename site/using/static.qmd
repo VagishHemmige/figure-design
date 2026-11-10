@@ -1,0 +1,46 @@
+---
+title: "Make a static figure"
+---
+
+*Written for version 0.1.5.*
+
+Stages 1 to 4 of [How it works](../how-it-works.qmd). The result is one approved static SVG for each view.
+
+## Ask
+
+Say what you want explained, in your own words. For example:
+
+- *"Draw a figure explaining how our weekly literature search works, for clinicians who'll use the results."*
+- *"I need a diagram of the study design for the methods page: two arms, a run-in period, and the follow-up visits."*
+
+If you already have an exact outline, paste it and say "draw this". The assistant treats an exact outline you supply as confirmed.
+
+## What the assistant asks you
+
+It asks only what changes the figure, at most three questions at a time:
+
+- what the figure should answer, for whom, and what they should understand afterwards;
+- which situations it must cover, such as first use, routine running, or what happens when something is missing;
+- one view or several, and what each view explains.
+
+If you say "don't ask, just draw", it does, and states the assumptions that matter.
+
+## Confirm the outline
+
+Before drawing, the assistant writes each view as a plain-language outline: who does what, inputs, decisions, what is read or saved, outputs, and waits. It marks what is live, planned or not yet confirmed.
+
+Read it as you would a colleague's description of your process. This is where most later rounds are saved: a wrong step caught here is one sentence to fix, not a redrawn figure.
+
+## Approve each SVG
+
+The assistant draws each view, checks the rendered picture, and for a substantial figure gets an independent design review when the app allows. Then it shows you each view in the chat.
+
+Say plainly which views you approve. Approving the content earlier, or simply not replying, does not count as approving the picture.
+
+For a small change later (a word, a logo, spacing), the assistant makes the change and checks it; it doesn't restart the questions or the full review.
+
+## Tips
+
+- **Say who will read it and where.** A slide, a printed page and a phone each need different text sizes.
+- **Point out what's wrong, not just that it's wrong.** "Arrow from B goes to the wrong box" is faster than "the flow looks off".
+- **Keep the outline as the record.** If the figure and the outline disagree, fix the outline first.

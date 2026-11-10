@@ -1,0 +1,31 @@
+---
+title: "Make it interactive"
+---
+
+*Written for version 0.1.5.*
+
+Stage 5 of [How it works](../how-it-works.qmd). It starts only after you've approved every static view, and only if you ask for it.
+
+## Ask
+
+*"Now make the approved figure interactive."* If you want something specific, such as one view per tab, say so.
+
+## What you get
+
+The approved figure stays the figure. Regions of it open to show more detail:
+
+- **On a desktop,** hovering briefly over a region opens its full explanation; you can move the pointer into it, and click to keep it open.
+- **On a phone,** tapping the whole region opens the same content.
+- **With a keyboard,** each region can be reached with Tab, has a visible focus outline, and closes with Escape.
+
+Only the region you selected is highlighted. Panels shouldn't flicker, cover what you tapped, or close by accident.
+
+If the whole figure is too small to read at phone width, the assistant adds a way to enlarge or pan it, or agreed crops of each section. It doesn't swap your illustrated figure for a text list unless you agree. There is always a plain-text account of the content for screen readers and for anyone who can't hover.
+
+## What stays fixed
+
+The approved composition, illustrations, colours, relationships and content don't change. A new view goes back through content confirmation and SVG approval; small refinements to one view don't reopen the others.
+
+## Testing
+
+The assistant tests hover, pinning, closing, keyboard, touch, zoom, the edges of the screen, scrolling and links, as far as it can. It tells you which tests were on a real phone or browser and which were simulated.

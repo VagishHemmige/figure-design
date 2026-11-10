@@ -1,0 +1,81 @@
+# Site about the plugin. The source is this folder. A GitHub Action
+# (.github/workflows/publish.yml) renders it and publishes it to the gh-pages
+# branch, which GitHub Pages serves. Nothing here is installed with the
+# plugin (the plugin is skills/ plus the manifests at the repository root).
+# Pages are written by hand at the level that changes slowly, and link to the
+# source on GitHub for detail. Each page says which version it was written for.
+# Layout and styles follow the r-analysis-workflow site.
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Interactive Figure Design"
+  site-url: https://vagishhemmige.github.io/figure-design
+  repo-url: https://github.com/VagishHemmige/figure-design
+  repo-branch: main
+  repo-subdir: site
+  repo-actions: [edit, issue]
+  page-navigation: true
+
+  sidebar:
+    style: docked
+    collapse-level: 3
+    search: true
+    contents:
+      # Four parts, shown with a label and a rule (styles.css), not as
+      # sections, so the sidebar keeps its depth.
+      - text: "Introduction"
+      - href: index.qmd
+        text: Home
+        icon: house
+      - href: how-it-works.qmd
+        text: How it works
+        icon: book
+      - href: install.qmd
+        text: Install
+        icon: book
+
+      - text: "---"
+      - text: "Guides"
+      - section: Using the plugin
+        contents:
+          - href: using/static.qmd
+            text: Make a static figure
+            icon: list-check
+          - href: using/interactive.qmd
+            text: Make it interactive
+            icon: list-check
+          - href: using/quarto.qmd
+            text: Put it on a Quarto site
+            icon: list-check
+
+      - text: "---"
+      - text: "Reference"
+      - section: What the plugin reads
+        contents:
+          - href: reference/style.qmd
+            text: The house style
+            icon: file-earmark-ruled
+          - href: reference/principles.qmd
+            text: Design principles
+            icon: file-earmark-ruled
+          - href: reference/checklist.qmd
+            text: Inspection checklist
+            icon: file-earmark-ruled
+          - href: reference/files.qmd
+            text: Files in the plugin
+            icon: file-earmark-ruled
+
+      - text: "---"
+      - text: "Evidence"
+      - href: testing.qmd
+        text: What's been tested
+        icon: clipboard-data
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    page-layout: full

@@ -1,0 +1,29 @@
+---
+title: "Design principles"
+---
+
+*Written for version 0.1.5. Source: [`design-principles.md`](https://github.com/VagishHemmige/figure-design/blob/main/skills/figure-to-interactive/references/design-principles.md).*
+
+These are practical uses of established guidance, not rigid rules about appearance. The plugin uses them to find specific communication problems, never to strip out needed content or restyle a figure you've accepted.
+
+## Composition before decoration
+
+Choose an orientation and reading order that show the relationships. Steps in sequence line up; equivalent inputs get equal weight; exceptions sit beside the step they affect. Leave room for branching and merging arrows before placing boxes. Avoid unnecessary crossings, bends and reversals. Use clear junctions and arrowheads; two things being close together must not be the only sign that they're related.
+
+Background: yWorks on [layered graph layout](https://www.yworks.com/pages/layered-graph-layout.html) and [orthogonal edge routing](https://yed.yworks.com/support/manual/layout/router_orthogonal.html). These describe the ideas; the plugin doesn't need their software, and automatic layouts still have to be inspected.
+
+## Hierarchy and grouping
+
+Make the main explanation dominate through size, position, contrast and white space. Group related elements by placing them close together or inside a shared region. Keep alignment and spacing consistent. Important distinctions shouldn't rely on colour alone. Setup steps and footnotes shouldn't look as important as the central action.
+
+Background: Nielsen Norman Group on [principles of visual design](https://media.nngroup.com/media/articles/attachments/Principles_Visual_Design-A4.pdf), [proximity](https://www.nngroup.com/articles/gestalt-proximity/) and [visual hierarchy](https://www.nngroup.com/articles/visual-hierarchy-ux-definition/).
+
+## Text, illustrations and shared objects
+
+Use a restrained set of type sizes, readable line lengths and clear space around labels. Measure the rendered text and make the container fit it, rather than shrinking the text until it fits. The same object has the same role, colour and illustration in every view. Illustrations other than logos form one family; logos are authentic and their source is kept. Decoration must not change what the figure says.
+
+## Audience and medium
+
+Choose the content and the way it's drawn for the reader and where they'll see it. The overview has to work before anything is clicked. A large figure scaled down can be technically complete and still unreadable, so inspect it at the size it will be seen, and plan enlarged viewing or section crops when needed.
+
+Background: Rougier, Droettboom and Bourne, ["Ten Simple Rules for Better Figures"](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003833) (*PLOS Computational Biology*, 2014). That paper is general advice for scientific figures, not a standard for workflow diagrams; the plugin's checks are its own summary rather than rules quoted from any one source.

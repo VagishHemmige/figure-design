@@ -1,0 +1,24 @@
+---
+title: "What's been tested"
+---
+
+*Written for version 0.1.5. Last updated 10 November 2026.*
+
+## Installing
+
+| Check | Result | How |
+|---|---|---|
+| Claude manifest and marketplace are valid | Passed | `claude plugin validate` with Claude Code 2.1.322. One warning: no icon. |
+| Claude installs the plugin and loads the skill | Passed | Added the repository folder as a local marketplace, installed `figure-design@figure-design`, and confirmed the skill `figure-to-interactive` loaded. |
+| Codex lists and installs the plugin | Passed | Same, with Codex CLI 0.167.0: the plugin showed as `installed, enabled`, version 0.1.5, with the skill in its cache. |
+| Installing straight from GitHub | Not yet | The tests above used a local copy of the repository, before these files reached the main branch. |
+| Claude app (web, desktop, Cowork) | Not yet | |
+| ChatGPT Plugin Creator from this repository | Not yet | The plugin was first built in ChatGPT, not from this repository. |
+
+## The workflow itself
+
+The plugin comes from the maintainer's own figures, including the TransplantID workflow; its [lessons](reference/style.qmd#lessons-from-earlier-figures) record what went wrong along the way. It has not been tested in a structured way, and no one else has used it yet.
+
+## This site
+
+Rendered with Quarto 1.8.25, the version the publish workflow uses, before the first publish. The workflow figure on [How it works](how-it-works.qmd) was checked at desktop and phone widths; at phone width its one-line descriptions are small, so the page repeats every stage in text.
