@@ -1,0 +1,23 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "author": {
+    "email": "vagish.hemmige@gmail.com",
+    "name": "Vagish Hemmige"
+  },
+  "description": "Vagish’s workflow for polished static explanatory figures and faithful portable interactives.",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "capabilities": [],
+        "category": "Productivity",
+        "defaultPrompt": "Use my figure design preferences to develop a static figure and then, if requested, its interactive version.",
+        "developerName": "Vagish Hemmige",
+        "displayName": "Interactive Figure Design",
+        "longDescription": "Develop clear static figures with audience-aware content and visual review, then add consistent desktop hover, mobile tapping, and portable Quarto-ready interactions when requested.",
+        "shortDescription": "Static to interactive figures"
+      }
+    }
+  },
+  "name": "figure-design",
+  "version": "0.1.5"
+}
