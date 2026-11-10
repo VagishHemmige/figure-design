@@ -1,0 +1,11 @@
+{
+  "name": "figure-design",
+  "displayName": "Interactive Figure Design",
+  "version": "0.1.5",
+  "description": "Vagish’s workflow for polished static explanatory figures and faithful portable interactives.",
+  "author": {
+    "name": "Vagish Hemmige"
+  },
+  "repository": "https://github.com/VagishHemmige/figure-design",
+  "keywords": ["figures", "SVG", "diagrams", "interactive", "Quarto"]
+}

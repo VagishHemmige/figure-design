@@ -1,0 +1,33 @@
+---
+title: "Put it on a Quarto site"
+---
+
+*Written for version 0.1.5.*
+
+Part of stage 6 of [How it works](../how-it-works.qmd). Ask for it when the figure will live on a Quarto website, such as an analysis project's explainer site.
+
+## Ask
+
+*"Give me this figure ready for my Quarto site."* Say which site and page if the assistant can see the repository.
+
+## What you get
+
+- **The files:** the SVG for a static figure, or the HTML, scripts and assets for an interactive one, with no server or Quarto extension needed.
+- **A minimal example** of how to include it on a page.
+- **A deliberate choice** between embedding the figure directly in the page and loading it in an iframe. The assistant explains which it chose and why.
+
+It checks the paths, that the assets are copied when the site renders, the height on the page, and that the figure still works after Quarto renders the page. It doesn't assume an existing hotspot extension reproduces the design without checking.
+
+## A static figure
+
+A static SVG goes on a page like any image:
+
+```markdown
+![What the figure shows, in one sentence.](images/my-figure.svg){fig-alt="A full description for screen readers."}
+```
+
+The figure on [How it works](../how-it-works.qmd) is included exactly this way.
+
+## Publishing
+
+The assistant publishes only what you've authorised, and tells you the result, anything it couldn't check, and any decision still open.

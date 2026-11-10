@@ -1,0 +1,35 @@
+---
+title: "The house style"
+---
+
+*Written for version 0.1.5. Source: [`reference-assets.md`](https://github.com/VagishHemmige/figure-design/blob/main/skills/figure-to-interactive/references/reference-assets.md) and [`design-lessons.md`](https://github.com/VagishHemmige/figure-design/blob/main/skills/figure-to-interactive/references/design-lessons.md).*
+
+The plugin's default look comes from one real figure: the maintainer's illustrated workflow for an automated curation system for TransplantID.net. Before a substantial new design, the assistant renders and studies it rather than working from a remembered description.
+
+## What the style is
+
+- **Numbered pastel phases,** each a group of related steps.
+- **Strong navy headings** and short, informative bullets.
+- **Meaningful small illustrations** from one consistent family, matched to the subject: teaching pictures for teaching, documents for CVs, browsers for websites.
+- **Recognisable logos** of the services actually involved.
+- **Clearly directed, labelled arrows,** with pending and decision paths drawn so they look different.
+
+It is deliberately information-rich. The plugin is told not to turn it into sparse cards or another look just to satisfy a general rule, and to explain the trade-off when a change would help.
+
+## What it borrows and what it doesn't
+
+The assistant reuses the visual language and adapts the layout and content to the new subject. It doesn't copy the transplant content, and it builds new, editable text and shapes rather than reusing the reference's artwork.
+
+The reference figure itself is not shown on this site. It contains embedded artwork, logos and a font, and the plugin's notes say the reference gives no new right to redistribute them, so it is used only as a reference inside the plugin.
+
+## The interactive model
+
+After the static figure is approved, the default model for an interactive version is the reference's companion website: the illustrated overview stays the anchor, and regions expand on hover or tap. The plugin's notes say that site's late hover changes were never fully tested on phones or across browsers, so the assistant checks the new version itself rather than assuming the reference works everywhere.
+
+## Lessons from earlier figures
+
+- A figure can render perfectly and still be wrong. One needed the actual weekly list of actions and the first-use steps, not just a diagram of approvals.
+- Fixing awkward arrows one by one usually means the layout is wrong. Rearrange the stages first.
+- Mixing shaded icons with simple line drawings looks disjointed. Logos can differ; other illustrations should match each other.
+- A website drawn as an empty rectangle looks unfinished next to a detailed one.
+- Links to files on a Windows computer didn't open on a phone; a static SVG shown in the chat did.

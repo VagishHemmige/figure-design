@@ -1,0 +1,40 @@
+---
+title: "Interactive Figure Design"
+subtitle: "A plugin that helps an AI assistant make clear explanatory figures, then faithful interactive versions"
+author: "Vagish Hemmige"
+---
+
+*Written for version 0.1.5.*
+
+*An early version. It comes from the maintainer's own figures, such as the TransplantID workflow; it has not yet been used by other people.*
+
+## What it is
+
+Interactive Figure Design is a plugin for ChatGPT and Claude. A plugin is a set of instructions the assistant reads when a task calls for them, so it works the same way every time and in every chat. This one is for **explanatory figures**: workflow diagrams, study designs, system overviews and similar pictures that explain how something works.
+
+With the plugin installed, you ask in plain words ("Draw a figure explaining how our weekly literature search works") and the assistant follows the plugin's steps.
+
+It is not for data figures. Plots of real numbers belong in the analysis code that produces them.
+
+## What it does differently
+
+Without instructions, an assistant tends to draw first and ask later, which is why explanatory figures often take many rounds. The plugin changes the order:
+
+- **Content before drawing.** The assistant writes out, in plain language, what each view of the figure will explain, and you confirm it before anything is drawn.
+- **Static before interactive.** Each view is first a static SVG you can look at and approve. Interactivity comes only after that, and only if you ask.
+- **Checked before shown.** The assistant inspects the rendered picture, not just its code, and gets an independent design review for substantial figures when it can.
+- **Your style, not a generic one.** The default look is the information-rich style of the maintainer's TransplantID figure: numbered pastel phases, strong headings, meaningful small illustrations and clearly labelled arrows.
+
+[How it works](how-it-works.qmd) shows the six stages.
+
+## Where to start
+
+- [Install](install.qmd) the plugin.
+- Then [make a static figure](using/static.qmd), and if you want, [make it interactive](using/interactive.qmd) or [put it on a Quarto site](using/quarto.qmd).
+- To see what the assistant reads, start with [the house style](reference/style.qmd).
+
+## Before you rely on it
+
+The plugin guides an assistant; it does not check your facts. Review what the figure says as you would a colleague's draft before it goes into a paper, a talk or a website. [What's been tested](testing.qmd) lists what has and has not been checked.
+
+The source, including every instruction the assistant reads, is on [GitHub](https://github.com/VagishHemmige/figure-design).

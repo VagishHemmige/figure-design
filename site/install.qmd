@@ -1,0 +1,81 @@
+---
+title: "Install"
+---
+
+*Written for version 0.1.5. Commands checked on 10 November 2026; see [What's been tested](testing.qmd) for exactly how. Menus change; if what you see differs, tell the maintainer through a [GitHub issue](https://github.com/VagishHemmige/figure-design/issues).*
+
+Installing the plugin gives the assistant instructions only. It adds no access to your files, accounts or computer; what the assistant can reach is set in the app.
+
+The repository is its own marketplace (a marketplace is a list of plugins kept in a GitHub repository), so every route below starts from `VagishHemmige/figure-design`.
+
+Pick the assistant you use.
+
+## Claude (on the web, the desktop app or Cowork)
+
+You need a paid Claude plan (Pro, Max, Team or Enterprise).
+
+**Add the plugin's marketplace:**
+
+1. In Claude, open **Settings**, then **Customize**.
+2. Open the **Plugins** tab.
+3. Click **Add**, then **Add marketplace**.
+4. Choose **Add from a repository**.
+5. Type `VagishHemmige/figure-design` and confirm.
+
+If your organization limits which marketplaces you can add, Claude will refuse it; ask your administrator.
+
+**Install the plugin:**
+
+6. Still in **Customize** → **Plugins**, open the **Discover** tab.
+7. Select **Interactive Figure Design** and click **Add**.
+
+These are the same steps as for [R Analysis Workflow](https://vagishhemmige.github.io/r-analysis-workflow/install.html), which has screenshots. Source: Anthropic, [Use plugins in Claude](https://support.claude.com/en/articles/13837440-use-plugins-in-claude). Not yet tried in the Claude app with this plugin.
+
+## Claude Code
+
+You need Claude Code version 2.1.292 or later for the one-line install. In your terminal (not inside a Claude Code session):
+
+```bash
+claude plugin install figure-design --marketplace VagishHemmige/figure-design
+```
+
+On an older version, use two commands instead:
+
+```bash
+claude plugin marketplace add VagishHemmige/figure-design
+claude plugin install figure-design@figure-design
+```
+
+To check, run `claude plugin list`: you should see `figure-design@figure-design`. The plugin loads the next time you start Claude Code. To update later:
+
+```bash
+claude plugin update figure-design@figure-design
+```
+
+Sources: Claude Code docs, [Install and manage plugins](https://code.claude.com/docs/en/plugins/install) and [Create a marketplace](https://code.claude.com/docs/en/plugin-marketplaces).
+
+## Codex
+
+In your terminal:
+
+```bash
+codex plugin marketplace add VagishHemmige/figure-design
+codex plugin add figure-design@figure-design
+```
+
+To check, run `codex plugin list`: you should see `figure-design@figure-design` as `installed, enabled`. To pick up a new version, run `codex plugin marketplace upgrade figure-design`.
+
+Source: OpenAI, [Build plugins](https://developers.openai.com/codex/plugins/build).
+
+## ChatGPT
+
+In ChatGPT you make the plugin with OpenAI's **Plugin Creator**, pointing it at this repository. Whether Plugin Creator is available depends on your plan and workspace.
+
+1. Start a new conversation.
+2. Type `@`, search for **Plugin Creator**, and select it.
+3. Ask it, in your own words: *Create a plugin from https://github.com/VagishHemmige/figure-design.*
+4. Answer its questions and follow its prompts. Check that the name is **Interactive Figure Design**.
+
+**Use it:** in a new conversation, type `@`, start typing "Interactive Figure Design", and select it under **Plugins**.
+
+Not yet tried from this repository. The plugin was first built in ChatGPT, and the same route works for [R Analysis Workflow](https://vagishhemmige.github.io/r-analysis-workflow/install.html#chatgpt).
