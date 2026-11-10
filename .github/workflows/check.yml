@@ -1,0 +1,23 @@
+# Checks that the plugin's manifests agree on name and version, and that no
+# site page claims a newer version than the plugin. Runs on every pull
+# request and push to main. See .github/scripts/check_versions.py.
+
+on:
+  pull_request:
+  push:
+    branches: main
+
+name: Check manifests
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Check manifest names and versions
+        run: python3 .github/scripts/check_versions.py

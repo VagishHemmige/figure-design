@@ -4,9 +4,9 @@ title: "How it works"
 
 *Written for version 0.1.5.*
 
-The plugin has one skill, `figure-to-interactive`. It takes every figure through six stages, and two of them wait for you.
+The plugin has one skill, `figure-to-interactive`. It takes every figure through six stages, and two of them wait for you. Select the figure to enlarge it.
 
-![The six stages. The dark pills mark the two points where the assistant waits for you; the dashed stage happens only if you ask.](images/workflow.svg){fig-alt="Six stages from top to bottom. 1, agree on the content of each view; you confirm the outline. 2, design the flow, then draw one static SVG per view. 3, inspect the rendered figure and get an independent design review. 4, approve each SVG; you approve every view before anything is interactive. 5, only if you ask, add hover, tap and keyboard interactivity without changing the approved figure. 6, verify and deliver the files, with a Quarto example when wanted."}
+![The six stages. The dark pills mark the two points where the assistant waits for you; the dashed stage happens only if you ask.](images/workflow.svg){.lightbox fig-alt="Six stages from top to bottom. 1, agree on the content of each view; you confirm the outline. 2, design the flow, then draw one static SVG per view. 3, inspect the rendered figure and get an independent design review. 4, approve each SVG; you approve every view before anything is interactive. 5, only if you ask, add hover, tap and keyboard interactivity without changing the approved figure. 6, verify and deliver the files, with a Quarto example when wanted."}
 
 ## The stages
 

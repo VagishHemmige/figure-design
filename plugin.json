@@ -4,6 +4,7 @@
     "email": "vagish.hemmige@gmail.com",
     "name": "Vagish Hemmige"
   },
+  "license": "MIT",
   "description": "Vagish’s workflow for polished static explanatory figures and faithful portable interactives.",
   "extensions": {
     "com.openai": {
