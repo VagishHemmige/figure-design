@@ -1,0 +1,20 @@
+{
+  "name": "figure-design",
+  "interface": {
+    "displayName": "Interactive Figure Design"
+  },
+  "plugins": [
+    {
+      "name": "figure-design",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
