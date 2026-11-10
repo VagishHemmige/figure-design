@@ -219,7 +219,7 @@
     "href": "using/static.html#approve-each-svg",
     "title": "Make a static figure",
     "section": "Approve each SVG",
-    "text": "Approve each SVG\nThe assistant draws each view, checks the rendered picture, and for a substantial figure gets an independent design review when the app allows. Then it shows you each view in the chat.\nSay plainly which views you approve. Approving the content earlier, or simply not replying, does not count as approving the picture.\nFor a small change later (a word, a logo, spacing), the assistant makes the change and checks it; it doesn’t restart the questions or the full review.",
+    "text": "Approve each SVG\nThe assistant draws each view, checks the rendered picture, and for a substantial figure gets an independent design review when the app allows. Then it shows you each view in the chat.\nSay plainly which views you approve. Approving the content earlier, or simply not replying, does not count as approving the picture. You can skip this checkpoint, but only by saying so; it’s never assumed.\nFor a small change later (a word, a logo, spacing), the assistant makes the change and checks it; it doesn’t restart the questions or the full review.",
     "crumbs": [
       "Using the plugin",
       "Make a static figure"
@@ -230,7 +230,7 @@
     "href": "using/static.html#tips",
     "title": "Make a static figure",
     "section": "Tips",
-    "text": "Tips\n\nSay who will read it and where. A slide, a printed page and a phone each need different text sizes.\nPoint out what’s wrong, not just that it’s wrong. “Arrow from B goes to the wrong box” is faster than “the flow looks off”.\nKeep the outline as the record. If the figure and the outline disagree, fix the outline first.",
+    "text": "Tips\n\nSay who will read it and where. A slide, a printed page and a phone each need different text sizes.\nPoint out what’s wrong, not just that it’s wrong. “Arrow from B goes to the wrong box” is faster than “the flow looks off”.",
     "crumbs": [
       "Using the plugin",
       "Make a static figure"
@@ -263,7 +263,7 @@
     "href": "using/quarto.html#what-you-get",
     "title": "Put it on a Quarto site",
     "section": "What you get",
-    "text": "What you get\n\nThe files: the SVG for a static figure, or the HTML, scripts and assets for an interactive one, with no server or Quarto extension needed.\nA minimal example of how to include it on a page.\nA deliberate choice between embedding the figure directly in the page and loading it in an iframe. The assistant explains which it chose and why.\n\nIt checks the paths, that the assets are copied when the site renders, the height on the page, and that the figure still works after Quarto renders the page. It doesn’t assume an existing hotspot extension reproduces the design without checking.",
+    "text": "What you get\n\nThe files: the SVG for a static figure, or the HTML, scripts and assets for an interactive one, avoiding servers or extensions it doesn’t need.\nA minimal example of how to include it on a page.\nA deliberate choice between embedding the figure directly in the page and loading it in an iframe. The assistant makes this choice on purpose rather than by default.\n\nIt checks the paths, that the assets are copied when the site renders, the height on the page, and that the figure still works after Quarto renders the page. It doesn’t assume an existing hotspot extension reproduces the design without checking.",
     "crumbs": [
       "Using the plugin",
       "Put it on a Quarto site"
@@ -296,7 +296,7 @@
     "href": "how-it-works.html",
     "title": "How it works",
     "section": "",
-    "text": "Written for version 0.1.5.\nThe plugin has one skill, figure-to-interactive. It takes every figure through six stages, and two of them wait for you.",
+    "text": "Written for version 0.1.5.\nThe plugin has one skill, figure-to-interactive. It takes a figure through up to six stages, and two of them wait for you. A static-only figure ends at stage 4; stages 5 and 6 happen only if you ask for an interactive version. Select the figure to enlarge it.",
     "crumbs": [
       "How it works"
     ]
@@ -306,7 +306,7 @@
     "href": "how-it-works.html#the-stages",
     "title": "How it works",
     "section": "The stages",
-    "text": "The stages\n\nAgree on the content. For a new figure, the assistant asks at most three questions at a time: who the figure is for, which situations it must cover, and how many views it needs. It then writes a plain-language outline of each view: who does what, what is read or saved, the decisions, and the outputs. You confirm the outline. Agreeing on tab names is not agreeing on what’s in them.\nDesign the flow, then the SVG. The layout comes from the relationships: steps in order, equal inputs side by side, exceptions next to the step they affect, and space kept for arrows. Then it draws one static SVG for each view.\nInspect and review. The assistant checks the rendered picture for clipped or overlapping text, wrong or misleading arrows, and hierarchy. For a substantial figure it asks a separate reviewer for a design review when the app allows that, and says so if it can’t.\nApprove each SVG. Each view is shown in the chat. You approve each one. Content approval or silence doesn’t count, and nothing interactive is built until every view is approved.\nAdd interactivity, if you ask. Hover on a desktop, tap on a phone and keyboard access reveal more detail, without changing the approved figure.\nVerify and deliver. The assistant tests what applies, including on real devices where possible, says what it could and couldn’t test, and hands over the files, with a Quarto example if you want one.",
+    "text": "The stages\n\nAgree on the content. For a new figure, the assistant asks at most three questions at a time: who the figure is for, which situations it must cover, and how many views it needs. It then writes a plain-language outline of each view: who does what, what is read or saved, the decisions, and the outputs. You confirm the outline. Agreeing on tab names is not agreeing on what’s in them.\nDesign the flow, then the SVG. The layout comes from the relationships: steps in order, equal inputs side by side, exceptions next to the step they affect, and space kept for arrows. Then it draws one static SVG for each view.\nInspect and review. The assistant checks the rendered picture for clipped or overlapping text, wrong or misleading arrows, and hierarchy. For a substantial figure it asks a separate reviewer for a design review when the app allows that, and says so if it can’t.\nApprove each SVG. Each view is shown in the chat. You approve each one. Content approval or silence doesn’t count, and nothing interactive is built until every view is approved. If you only asked for a static figure, it ends here.\nAdd interactivity, if you ask. Hover on a desktop, tap on a phone and keyboard access reveal more detail, without changing the approved figure.\nVerify and deliver. The assistant tests what applies, says which tests were on real devices or browsers and which were simulated, and hands over the files, with a Quarto example if you want one.\n\nYou can skip either checkpoint, but only by saying so. The assistant never assumes you’ve waived one, and time passing isn’t approval.",
     "crumbs": [
       "How it works"
     ]
@@ -348,7 +348,7 @@
     "href": "using/interactive.html#what-you-get",
     "title": "Make it interactive",
     "section": "What you get",
-    "text": "What you get\nThe approved figure stays the figure. Regions of it open to show more detail:\n\nOn a desktop, hovering briefly over a region opens its full explanation; you can move the pointer into it, and click to keep it open.\nOn a phone, tapping the whole region opens the same content.\nWith a keyboard, each region can be reached with Tab, has a visible focus outline, and closes with Escape.\n\nOnly the region you selected is highlighted. Panels shouldn’t flicker, cover what you tapped, or close by accident.\nIf the whole figure is too small to read at phone width, the assistant adds a way to enlarge or pan it, or agreed crops of each section. It doesn’t swap your illustrated figure for a text list unless you agree. There is always a plain-text account of the content for screen readers and for anyone who can’t hover.",
+    "text": "What you get\nThe approved figure stays the figure. Regions of it open to show more detail:\n\nOn a desktop, hovering briefly over a region opens its full explanation; you can move the pointer into it, and click to keep it open.\nOn a phone, tapping the whole region opens the same content.\nWith a keyboard, each region is a normal focusable control with a visible focus outline, and panels close with Escape where that applies.\n\nOnly the region you selected is highlighted. Panels shouldn’t flicker, cover what you tapped, or close by accident.\nIf the whole figure is too small to read at phone width, the assistant adds a way to enlarge or pan it, or agreed crops of each section. It doesn’t swap your illustrated figure for a text list unless you agree. There is always a plain-text account of the content for screen readers and for anyone who can’t hover.",
     "crumbs": [
       "Using the plugin",
       "Make it interactive"
@@ -469,7 +469,7 @@
     "href": "reference/files.html#not-installed",
     "title": "Files in the plugin",
     "section": "Not installed",
-    "text": "Not installed\nsite/ is the source of this website, and .github/workflows/publish.yml publishes it. Neither is part of the plugin.",
+    "text": "Not installed\nsite/ is the source of this website, and .github/workflows/publish.yml publishes it. .github/workflows/check.yml runs .github/scripts/check_versions.py on every pull request: it fails if the three plugin.json files disagree on name or version, if a marketplace file doesn’t list the plugin, or if a site page claims a newer version than the plugin. None of these is part of the plugin’s instructions.\nREADME.md and LICENSE sit at the top of the repository. The license is MIT for the original text and code; it doesn’t cover the TransplantID reference figure.",
     "crumbs": [
       "What the plugin reads",
       "Files in the plugin"
@@ -490,7 +490,7 @@
     "href": "testing.html#installing",
     "title": "What’s been tested",
     "section": "Installing",
-    "text": "Installing\n\n\n\n\n\n\n\n\nCheck\nResult\nHow\n\n\n\n\nClaude manifest and marketplace are valid\nPassed\nclaude plugin validate with Claude Code 2.1.322. One warning: no icon.\n\n\nClaude installs the plugin and loads the skill\nPassed\nAdded the repository folder as a local marketplace, installed figure-design@figure-design, and confirmed the skill figure-to-interactive loaded.\n\n\nCodex lists and installs the plugin\nPassed\nSame, with Codex CLI 0.167.0: the plugin showed as installed, enabled, version 0.1.5, with the skill in its cache.\n\n\nInstalling straight from GitHub\nPassed\nRepeated both installs from VagishHemmige/figure-design on GitHub, using the pull-request branch before it was merged: Claude Code loaded the skill, and Codex showed the plugin as installed, enabled.\n\n\nClaude app (web, desktop, Cowork)\nNot yet\n\n\n\nChatGPT Plugin Creator from this repository\nNot yet\nThe plugin was first built in ChatGPT, not from this repository.",
+    "text": "Installing\n\n\n\n\n\n\n\n\nCheck\nResult\nHow\n\n\n\n\nClaude manifest and marketplace are valid\nPassed\nclaude plugin validate with Claude Code 2.1.322: one warning, no icon. With --profile directory (the checks Anthropic’s plugin directory applies), the first version also lacked a README and a license; both were added on 10 November 2026 and it now passes, still with the icon warning.\n\n\nClaude installs the plugin and loads the skill\nPassed\nAdded the repository folder as a local marketplace, installed figure-design@figure-design, and confirmed the skill figure-to-interactive loaded.\n\n\nCodex lists and installs the plugin\nPassed\nSame, with Codex CLI 0.167.0: the plugin showed as installed, enabled, version 0.1.5, with the skill in its cache.\n\n\nInstalling straight from GitHub\nPassed\nRepeated both installs from VagishHemmige/figure-design on GitHub, using the pull-request branch before it was merged: Claude Code loaded the skill, and Codex showed the plugin as installed, enabled.\n\n\nOne-line Claude Code install (--marketplace)\nPassed\nclaude plugin install figure-design --marketplace VagishHemmige/figure-design from the main branch, Claude Code 2.1.322, after the first merge: added the marketplace and loaded the skill.\n\n\nClaude app (web, desktop, Cowork)\nNot yet\n\n\n\nChatGPT Plugin Creator from this repository\nNot yet\nThe plugin was first built in ChatGPT, not from this repository.",
     "crumbs": [
       "What's been tested"
     ]
@@ -510,7 +510,7 @@
     "href": "testing.html#this-site",
     "title": "What’s been tested",
     "section": "This site",
-    "text": "This site\nRendered with Quarto 1.8.25, the version the publish workflow uses, before the first publish. The workflow figure on How it works was checked at desktop and phone widths; at phone width its one-line descriptions are small, so the page repeats every stage in text.",
+    "text": "This site\nRendered with Quarto 1.8.25, the version the publish workflow uses. First published by the Publish website action on 10 November 2026 and checked live. The workflow figure on How it works was checked at desktop and phone widths; at phone width its one-line descriptions are small, so the page repeats every stage in text.",
     "crumbs": [
       "What's been tested"
     ]
@@ -530,7 +530,7 @@
     "href": "index.html#what-it-is",
     "title": "Interactive Figure Design",
     "section": "What it is",
-    "text": "What it is\nInteractive Figure Design is a plugin for ChatGPT and Claude. A plugin is a set of instructions the assistant reads when a task calls for them, so it works the same way every time and in every chat. This one is for explanatory figures: workflow diagrams, study designs, system overviews and similar pictures that explain how something works.\nWith the plugin installed, you ask in plain words (“Draw a figure explaining how our weekly literature search works”) and the assistant follows the plugin’s steps.\nIt is not for data figures. Plots of real numbers belong in the analysis code that produces them.",
+    "text": "What it is\nInteractive Figure Design is a plugin for ChatGPT and Claude. A plugin is a set of instructions the assistant reads when a task calls for them, so it works the same way every time and in every chat. This one is for explanatory figures: workflow diagrams, study designs, system overviews and similar pictures that explain how something works.\nWith the plugin installed, you ask in plain words (“Draw a figure explaining how our weekly literature search works”) and the assistant follows the plugin’s steps.\nIt’s built for explaining processes, not plotting data: a plot of real numbers is better made by the analysis code that produces it.",
     "crumbs": [
       "Home"
     ]
@@ -560,7 +560,7 @@
     "href": "index.html#before-you-rely-on-it",
     "title": "Interactive Figure Design",
     "section": "Before you rely on it",
-    "text": "Before you rely on it\nThe plugin guides an assistant; it does not check your facts. Review what the figure says as you would a colleague’s draft before it goes into a paper, a talk or a website. What’s been tested lists what has and has not been checked.\nThe source, including every instruction the assistant reads, is on GitHub.",
+    "text": "Before you rely on it\nThe plugin guides an assistant; it does not check your facts. Review what the figure says as you would a colleague’s draft before it goes into a paper, a talk or a website. What’s been tested lists what has and has not been checked.\nThe source, including every instruction the assistant reads, is on GitHub. Original text and code are MIT licensed; the bundled reference figure is not covered (see the house style).",
     "crumbs": [
       "Home"
     ]

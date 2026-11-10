@@ -43,6 +43,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-f6725ec72a40a9c11b774886aa13be2c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -260,11 +263,11 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p><em>Written for version 0.1.5.</em></p>
-<p>The plugin has one skill, <code>figure-to-interactive</code>. It takes every figure through six stages, and two of them wait for you.</p>
+<p>The plugin has one skill, <code>figure-to-interactive</code>. It takes a figure through up to six stages, and two of them wait for you. A static-only figure ends at stage 4; stages 5 and 6 happen only if you ask for an interactive version. Select the figure to enlarge it.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/workflow.svg" class="img-fluid figure-img" alt="Six stages from top to bottom. 1, agree on the content of each view; you confirm the outline. 2, design the flow, then draw one static SVG per view. 3, inspect the rendered figure and get an independent design review. 4, approve each SVG; you approve every view before anything is interactive. 5, only if you ask, add hover, tap and keyboard interactivity without changing the approved figure. 6, verify and deliver the files, with a Quarto example when wanted."></p>
-<figcaption>The six stages. The dark pills mark the two points where the assistant waits for you; the dashed stage happens only if you ask.</figcaption>
+<p><a href="images/workflow.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="The six stages. The dark pills mark the two points where the assistant waits for you; the dashed stages happen only if you ask for interactivity."><img src="images/workflow.svg" class="img-fluid figure-img" alt="Six stages from top to bottom. 1, agree on the content of each view; you confirm the outline. 2, design the flow, then draw one static SVG per view. 3, inspect the rendered figure, with an independent design review for substantial figures. 4, approve each SVG; you approve every view before anything is interactive. A static-only figure ends here. 5 and 6, only if you ask for interactivity: 5, add hover, tap and keyboard interactivity without changing the approved figure; 6, verify, say which tests were on real devices and which were simulated, and deliver the files, with a Quarto example when wanted."></a></p>
+<figcaption>The six stages. The dark pills mark the two points where the assistant waits for you; the dashed stages happen only if you ask for interactivity.</figcaption>
 </figure>
 </div>
 <section id="the-stages" class="level2">
@@ -273,10 +276,11 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Agree on the content.</strong> For a new figure, the assistant asks at most three questions at a time: who the figure is for, which situations it must cover, and how many views it needs. It then writes a plain-language outline of each view: who does what, what is read or saved, the decisions, and the outputs. <strong>You confirm the outline.</strong> Agreeing on tab names is not agreeing on what’s in them.</li>
 <li><strong>Design the flow, then the SVG.</strong> The layout comes from the relationships: steps in order, equal inputs side by side, exceptions next to the step they affect, and space kept for arrows. Then it draws one static SVG for each view.</li>
 <li><strong>Inspect and review.</strong> The assistant checks the rendered picture for clipped or overlapping text, wrong or misleading arrows, and hierarchy. For a substantial figure it asks a separate reviewer for a design review when the app allows that, and says so if it can’t.</li>
-<li><strong>Approve each SVG.</strong> Each view is shown in the chat. <strong>You approve each one.</strong> Content approval or silence doesn’t count, and nothing interactive is built until every view is approved.</li>
+<li><strong>Approve each SVG.</strong> Each view is shown in the chat. <strong>You approve each one.</strong> Content approval or silence doesn’t count, and nothing interactive is built until every view is approved. If you only asked for a static figure, it ends here.</li>
 <li><strong>Add interactivity, if you ask.</strong> Hover on a desktop, tap on a phone and keyboard access reveal more detail, without changing the approved figure.</li>
-<li><strong>Verify and deliver.</strong> The assistant tests what applies, including on real devices where possible, says what it could and couldn’t test, and hands over the files, with a Quarto example if you want one.</li>
+<li><strong>Verify and deliver.</strong> The assistant tests what applies, says which tests were on real devices or browsers and which were simulated, and hands over the files, with a Quarto example if you want one.</li>
 </ol>
+<p>You can skip either checkpoint, but only by saying so. The assistant never assumes you’ve waived one, and time passing isn’t approval.</p>
 </section>
 <section id="where-the-rules-live" class="level2">
 <h2 class="anchored" data-anchor-id="where-the-rules-live">Where the rules live</h2>
@@ -699,8 +703,40 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/VagishHemmige/figure-design/edit/main/site/how-it-works.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/VagishHemmige/figure-design/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/VagishHemmige/figure-design/edit/main/site/how-it-works.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/VagishHemmige/figure-design/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+</body></html>

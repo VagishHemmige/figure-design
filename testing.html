@@ -278,7 +278,7 @@ ul.task-list li input[type="checkbox"] {
 <tr class="odd">
 <td>Claude manifest and marketplace are valid</td>
 <td>Passed</td>
-<td><code>claude plugin validate</code> with Claude Code 2.1.322. One warning: no icon.</td>
+<td><code>claude plugin validate</code> with Claude Code 2.1.322: one warning, no icon. With <code>--profile directory</code> (the checks Anthropic’s plugin directory applies), the first version also lacked a README and a license; both were added on 10 November 2026 and it now passes, still with the icon warning.</td>
 </tr>
 <tr class="even">
 <td>Claude installs the plugin and loads the skill</td>
@@ -296,11 +296,16 @@ ul.task-list li input[type="checkbox"] {
 <td>Repeated both installs from <code>VagishHemmige/figure-design</code> on GitHub, using the pull-request branch before it was merged: Claude Code loaded the skill, and Codex showed the plugin as <code>installed, enabled</code>.</td>
 </tr>
 <tr class="odd">
+<td>One-line Claude Code install (<code>--marketplace</code>)</td>
+<td>Passed</td>
+<td><code>claude plugin install figure-design --marketplace VagishHemmige/figure-design</code> from the main branch, Claude Code 2.1.322, after the first merge: added the marketplace and loaded the skill.</td>
+</tr>
+<tr class="even">
 <td>Claude app (web, desktop, Cowork)</td>
 <td>Not yet</td>
 <td></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>ChatGPT Plugin Creator from this repository</td>
 <td>Not yet</td>
 <td>The plugin was first built in ChatGPT, not from this repository.</td>
@@ -314,7 +319,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="this-site" class="level2">
 <h2 class="anchored" data-anchor-id="this-site">This site</h2>
-<p>Rendered with Quarto 1.8.25, the version the publish workflow uses, before the first publish. The workflow figure on <a href="./how-it-works.html">How it works</a> was checked at desktop and phone widths; at phone width its one-line descriptions are small, so the page repeats every stage in text.</p>
+<p>Rendered with Quarto 1.8.25, the version the publish workflow uses. First published by the Publish website action on 10 November 2026 and checked live. The workflow figure on <a href="./how-it-works.html">How it works</a> was checked at desktop and phone widths; at phone width its one-line descriptions are small, so the page repeats every stage in text.</p>
 
 
 </section>
