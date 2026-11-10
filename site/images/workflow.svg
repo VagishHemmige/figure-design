@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 712" width="640" height="712" role="img" aria-labelledby="wf-title wf-desc" font-family="Helvetica, Arial, sans-serif">
   <title id="wf-title">How the figure-design plugin works</title>
-  <desc id="wf-desc">Six stages from top to bottom. 1, agree on the content of each view; you confirm the outline. 2, design the flow, then draw one static SVG per view. 3, inspect the rendered figure and get an independent design review. 4, approve each SVG; you approve every view before anything is interactive. 5, only if you ask, add hover, tap and keyboard interactivity without changing the approved figure. 6, verify on real devices and deliver the files, with a Quarto example when wanted.</desc>
+  <desc id="wf-desc">Six stages from top to bottom. 1, agree on the content of each view; you confirm the outline. 2, design the flow, then draw one static SVG per view. 3, inspect the rendered figure, with an independent design review for substantial figures. 4, approve each SVG; you approve every view before anything is interactive. A static-only figure ends here. 5 and 6, only if you ask for interactivity: 5, add hover, tap and keyboard interactivity without changing the approved figure; 6, verify, say which tests were on real devices and which were simulated, and deliver the files, with a Quarto example when wanted.</desc>
   <defs>
     <marker id="wf-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
       <path d="M0,0 L10,5 L0,10 z" fill="#1f3a5f"/>
@@ -13,6 +13,8 @@
     <line x1="320" y1="108" x2="320" y2="132"/>
     <line x1="320" y1="222" x2="320" y2="246"/>
     <line x1="320" y1="336" x2="320" y2="360"/>
+  </g>
+  <g stroke="#1f3a5f" stroke-width="2" fill="none" stroke-dasharray="4 3" marker-end="url(#wf-arrow)">
     <line x1="320" y1="450" x2="320" y2="474"/>
     <line x1="320" y1="564" x2="320" y2="588"/>
   </g>
@@ -38,14 +40,14 @@
   <circle cx="78" cy="292" r="20" fill="#1f3a5f"/>
   <text x="78" y="298" text-anchor="middle" font-size="17" font-weight="700" fill="#ffffff">3</text>
   <text x="114" y="284" font-size="17" font-weight="700" fill="#1f3a5f">Inspect and review</text>
-  <text x="114" y="309" font-size="13.5" fill="#33475b">Checks on the render, plus an independent design review</text>
+  <text x="114" y="309" font-size="13.5" fill="#33475b">Checks on the render; independent review if substantial</text>
 
   <!-- Stage 4 -->
   <rect x="40" y="362" width="560" height="88" rx="12" fill="#efe8f8" stroke="#c4b2e6" stroke-width="1.5"/>
   <circle cx="78" cy="406" r="20" fill="#1f3a5f"/>
   <text x="78" y="412" text-anchor="middle" font-size="17" font-weight="700" fill="#ffffff">4</text>
   <text x="114" y="398" font-size="17" font-weight="700" fill="#1f3a5f">Approve each SVG</text>
-  <text x="114" y="423" font-size="13.5" fill="#33475b">Shown in the chat; you see every view</text>
+  <text x="114" y="423" font-size="13.5" fill="#33475b">Each view shown in the chat for approval</text>
   <rect x="470" y="392" width="114" height="28" rx="14" fill="#1f3a5f"/>
   <text x="527" y="411" text-anchor="middle" font-size="12.5" font-weight="700" fill="#ffffff">You approve</text>
 
@@ -57,12 +59,13 @@
   <text x="114" y="537" font-size="13.5" fill="#33475b">Hover, tap and keyboard, without changing the figure</text>
   <text x="584" y="512" text-anchor="end" font-size="12.5" font-style="italic" fill="#7a4a58">if you ask</text>
 
-  <!-- Stage 6 -->
-  <rect x="40" y="590" width="560" height="88" rx="12" fill="#e2f3f5" stroke="#97cfd6" stroke-width="1.5"/>
+  <!-- Stage 6: with stage 5 (dashed) -->
+  <rect x="40" y="590" width="560" height="88" rx="12" fill="#e2f3f5" stroke="#5fa9b3" stroke-width="1.5" stroke-dasharray="7 5"/>
   <circle cx="78" cy="634" r="20" fill="#1f3a5f"/>
   <text x="78" y="640" text-anchor="middle" font-size="17" font-weight="700" fill="#ffffff">6</text>
   <text x="114" y="626" font-size="17" font-weight="700" fill="#1f3a5f">Verify and deliver</text>
-  <text x="114" y="651" font-size="13.5" fill="#33475b">Test on devices; files, plus a Quarto example if wanted</text>
+  <text x="584" y="626" text-anchor="end" font-size="12.5" font-style="italic" fill="#2f6670">with stage 5</text>
+  <text x="114" y="651" font-size="13.5" fill="#33475b">Report what was tested and how; hand over the files</text>
 
-  <text x="40" y="702" font-size="12" fill="#5c6b7a">Dashed border: only when requested. Dark pills: steps that wait for you.</text>
+  <text x="40" y="702" font-size="12" fill="#5c6b7a">Dark pills: steps that wait for you. Dashed: only if you ask. Static only: ends at 4.</text>
 </svg>

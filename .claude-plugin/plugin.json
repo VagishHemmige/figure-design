@@ -6,6 +6,7 @@
   "author": {
     "name": "Vagish Hemmige"
   },
+  "license": "MIT",
   "repository": "https://github.com/VagishHemmige/figure-design",
   "keywords": ["figures", "SVG", "diagrams", "interactive", "Quarto"]
 }

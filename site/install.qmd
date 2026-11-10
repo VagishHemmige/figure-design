@@ -73,7 +73,7 @@ In ChatGPT you make the plugin with OpenAI's **Plugin Creator**, pointing it at 
 
 1. Start a new conversation.
 2. Type `@`, search for **Plugin Creator**, and select it.
-3. Ask it, in your own words: *Create a plugin from https://github.com/VagishHemmige/figure-design.*
+3. Ask it, in your own words: *Create a plugin from* `https://github.com/VagishHemmige/figure-design`.
 4. Answer its questions and follow its prompts. Check that the name is **Interactive Figure Design**.
 
 **Use it:** in a new conversation, type `@`, start typing "Interactive Figure Design", and select it under **Plugins**.

@@ -16,7 +16,7 @@ The approved figure stays the figure. Regions of it open to show more detail:
 
 - **On a desktop,** hovering briefly over a region opens its full explanation; you can move the pointer into it, and click to keep it open.
 - **On a phone,** tapping the whole region opens the same content.
-- **With a keyboard,** each region can be reached with Tab, has a visible focus outline, and closes with Escape.
+- **With a keyboard,** each region is a normal focusable control with a visible focus outline, and panels close with Escape where that applies.
 
 Only the region you selected is highlighted. Panels shouldn't flicker, cover what you tapped, or close by accident.
 

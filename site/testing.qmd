@@ -8,10 +8,11 @@ title: "What's been tested"
 
 | Check | Result | How |
 |---|---|---|
-| Claude manifest and marketplace are valid | Passed | `claude plugin validate` with Claude Code 2.1.322. One warning: no icon. |
+| Claude manifest and marketplace are valid | Passed | `claude plugin validate` with Claude Code 2.1.322: one warning, no icon. With `--profile directory` (the checks Anthropic's plugin directory applies), the first version also lacked a README and a license; both were added on 10 November 2026 and it now passes, still with the icon warning. |
 | Claude installs the plugin and loads the skill | Passed | Added the repository folder as a local marketplace, installed `figure-design@figure-design`, and confirmed the skill `figure-to-interactive` loaded. |
 | Codex lists and installs the plugin | Passed | Same, with Codex CLI 0.167.0: the plugin showed as `installed, enabled`, version 0.1.5, with the skill in its cache. |
 | Installing straight from GitHub | Passed | Repeated both installs from `VagishHemmige/figure-design` on GitHub, using the pull-request branch before it was merged: Claude Code loaded the skill, and Codex showed the plugin as `installed, enabled`. |
+| One-line Claude Code install (`--marketplace`) | Passed | `claude plugin install figure-design --marketplace VagishHemmige/figure-design` from the main branch, Claude Code 2.1.322, after the first merge: added the marketplace and loaded the skill. |
 | Claude app (web, desktop, Cowork) | Not yet | |
 | ChatGPT Plugin Creator from this repository | Not yet | The plugin was first built in ChatGPT, not from this repository. |
 
@@ -21,4 +22,4 @@ The plugin comes from the maintainer's own figures, including the TransplantID w
 
 ## This site
 
-Rendered with Quarto 1.8.25, the version the publish workflow uses, before the first publish. The workflow figure on [How it works](how-it-works.qmd) was checked at desktop and phone widths; at phone width its one-line descriptions are small, so the page repeats every stage in text.
+Rendered with Quarto 1.8.25, the version the publish workflow uses. First published by the Publish website action on 10 November 2026 and checked live. The workflow figure on [How it works](how-it-works.qmd) was checked at desktop and phone widths; at phone width its one-line descriptions are small, so the page repeats every stage in text.

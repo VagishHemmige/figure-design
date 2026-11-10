@@ -71,9 +71,12 @@
   padding-top: .35rem;
 }
 
-/* Long file names in tables (Files in the plugin) wrap at phone width
-   instead of being cut off at the column edge. */
-td code {
+/* Long file names, commands and URLs in inline code (tables, lists and
+   paragraphs) wrap at phone width instead of being cut off or making the
+   page scroll sideways. Code blocks keep their own horizontal scroll. */
+td code,
+p code,
+li code {
   overflow-wrap: anywhere;
   white-space: normal;
 }

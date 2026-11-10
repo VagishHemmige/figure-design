@@ -35,7 +35,7 @@ Read it as you would a colleague's description of your process. This is where mo
 
 The assistant draws each view, checks the rendered picture, and for a substantial figure gets an independent design review when the app allows. Then it shows you each view in the chat.
 
-Say plainly which views you approve. Approving the content earlier, or simply not replying, does not count as approving the picture.
+Say plainly which views you approve. Approving the content earlier, or simply not replying, does not count as approving the picture. You can skip this checkpoint, but only by saying so; it's never assumed.
 
 For a small change later (a word, a logo, spacing), the assistant makes the change and checks it; it doesn't restart the questions or the full review.
 
@@ -43,4 +43,3 @@ For a small change later (a word, a logo, spacing), the assistant makes the chan
 
 - **Say who will read it and where.** A slide, a printed page and a phone each need different text sizes.
 - **Point out what's wrong, not just that it's wrong.** "Arrow from B goes to the wrong box" is faster than "the flow looks off".
-- **Keep the outline as the record.** If the figure and the outline disagree, fix the outline first.

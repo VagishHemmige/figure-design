@@ -33,4 +33,6 @@ All five use the name `figure-design`. The three `plugin.json` files also carry 
 
 ## Not installed
 
-`site/` is the source of this website, and `.github/workflows/publish.yml` publishes it. Neither is part of the plugin.
+`site/` is the source of this website, and `.github/workflows/publish.yml` publishes it. `.github/workflows/check.yml` runs `.github/scripts/check_versions.py` on every pull request: it fails if the three `plugin.json` files disagree on name or version, if a marketplace file doesn't list the plugin, or if a site page claims a newer version than the plugin. None of these is part of the plugin's instructions.
+
+`README.md` and `LICENSE` sit at the top of the repository. The license is MIT for the original text and code; it doesn't cover the TransplantID reference figure.

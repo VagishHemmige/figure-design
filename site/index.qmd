@@ -14,7 +14,7 @@ Interactive Figure Design is a plugin for ChatGPT and Claude. A plugin is a set 
 
 With the plugin installed, you ask in plain words ("Draw a figure explaining how our weekly literature search works") and the assistant follows the plugin's steps.
 
-It is not for data figures. Plots of real numbers belong in the analysis code that produces them.
+It's built for explaining processes, not plotting data: a plot of real numbers is better made by the analysis code that produces it.
 
 ## What it does differently
 
@@ -37,4 +37,4 @@ Without instructions, an assistant tends to draw first and ask later, which is w
 
 The plugin guides an assistant; it does not check your facts. Review what the figure says as you would a colleague's draft before it goes into a paper, a talk or a website. [What's been tested](testing.qmd) lists what has and has not been checked.
 
-The source, including every instruction the assistant reads, is on [GitHub](https://github.com/VagishHemmige/figure-design).
+The source, including every instruction the assistant reads, is on [GitHub](https://github.com/VagishHemmige/figure-design). Original text and code are MIT licensed; the bundled reference figure is not covered (see [the house style](reference/style.qmd)).
