@@ -12,9 +12,9 @@ Part of stage 6 of [How it works](../how-it-works.qmd). Ask for it when the figu
 
 ## What you get
 
-- **The files:** the SVG for a static figure, or the HTML, scripts and assets for an interactive one, with no server or Quarto extension needed.
+- **The files:** the SVG for a static figure, or the HTML, scripts and assets for an interactive one, avoiding servers or extensions it doesn't need.
 - **A minimal example** of how to include it on a page.
-- **A deliberate choice** between embedding the figure directly in the page and loading it in an iframe. The assistant explains which it chose and why.
+- **A deliberate choice** between embedding the figure directly in the page and loading it in an iframe. The assistant makes this choice on purpose rather than by default.
 
 It checks the paths, that the assets are copied when the site renders, the height on the page, and that the figure still works after Quarto renders the page. It doesn't assume an existing hotspot extension reproduces the design without checking.
 

@@ -14,7 +14,7 @@ Interactive Figure Design is a plugin for ChatGPT and Claude. A plugin is a set 
 
 With the plugin installed, you ask in plain words ("Draw a figure explaining how our weekly literature search works") and the assistant follows the plugin's steps.
 
-It is not for data figures. Plots of real numbers belong in the analysis code that produces them.
+It's built for explaining processes, not plotting data: a plot of real numbers is better made by the analysis code that produces it.
 
 ## What it does differently
 

@@ -4,7 +4,7 @@ A plugin for Claude and ChatGPT/Codex that helps an AI assistant make clear expl
 
 Instead of drawing first and asking later, the assistant agrees the content of each view with you, draws one static SVG per view, inspects the rendered picture, and waits for your approval before adding any interactivity. The default look is an information-rich illustrated style: numbered pastel phases, strong headings, meaningful small illustrations and clearly labelled arrows.
 
-It is for explanatory figures, not data figures: plots of real numbers belong in the analysis code that produces them.
+It's built for explaining processes, not plotting data: a plot of real numbers is better made by the analysis code that produces it.
 
 **Website:** https://vagishhemmige.github.io/figure-design (how it works, guides, and what has been tested)
 
