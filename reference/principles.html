@@ -234,6 +234,8 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#composition-before-decoration" id="toc-composition-before-decoration" class="nav-link active" data-scroll-target="#composition-before-decoration">Composition before decoration</a></li>
+  <li><a href="#connectors-and-arrows" id="toc-connectors-and-arrows" class="nav-link" data-scroll-target="#connectors-and-arrows">Connectors and arrows</a></li>
+  <li><a href="#layout-alignment-and-labels" id="toc-layout-alignment-and-labels" class="nav-link" data-scroll-target="#layout-alignment-and-labels">Layout, alignment and labels</a></li>
   <li><a href="#hierarchy-and-grouping" id="toc-hierarchy-and-grouping" class="nav-link" data-scroll-target="#hierarchy-and-grouping">Hierarchy and grouping</a></li>
   <li><a href="#text-illustrations-and-shared-objects" id="toc-text-illustrations-and-shared-objects" class="nav-link" data-scroll-target="#text-illustrations-and-shared-objects">Text, illustrations and shared objects</a></li>
   <li><a href="#audience-and-medium" id="toc-audience-and-medium" class="nav-link" data-scroll-target="#audience-and-medium">Audience and medium</a></li>
@@ -262,12 +264,172 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><em>Written for version 0.1.5. Source: <a href="https://github.com/VagishHemmige/figure-design/blob/main/plugin/skills/figure-to-interactive/references/design-principles.md"><code>design-principles.md</code></a>.</em></p>
+<p><em>Written for version 0.1.6. Source: <a href="https://github.com/VagishHemmige/figure-design/blob/main/plugin/skills/figure-to-interactive/references/design-principles.md"><code>design-principles.md</code></a>.</em></p>
 <p>These are practical uses of established guidance, not rigid rules about appearance. The plugin uses them to find specific communication problems, never to strip out needed content or restyle a figure you’ve accepted.</p>
 <section id="composition-before-decoration" class="level2">
 <h2 class="anchored" data-anchor-id="composition-before-decoration">Composition before decoration</h2>
 <p>Choose an orientation and reading order that show the relationships. Steps in sequence line up; equivalent inputs get equal weight; exceptions sit beside the step they affect. Leave room for branching and merging arrows before placing boxes. Avoid unnecessary crossings, bends and reversals. Use clear junctions and arrowheads; two things being close together must not be the only sign that they’re related.</p>
 <p>Background: yWorks on <a href="https://www.yworks.com/pages/layered-graph-layout.html">layered graph layout</a> and <a href="https://yed.yworks.com/support/manual/layout/router_orthogonal.html">orthogonal edge routing</a>. These describe the ideas; the plugin doesn’t need their software, and automatic layouts still have to be inspected.</p>
+</section>
+<section id="connectors-and-arrows" class="level2">
+<h2 class="anchored" data-anchor-id="connectors-and-arrows">Connectors and arrows</h2>
+<p>Version 0.1.6 turns the principles above into numbered rules, so a check or a reviewer can cite the rule a figure breaks. The assistant applies them when drawing, and again after any revision that moves a box or a line. Rules marked <em>code</em> can be checked by a script on the rendered SVG; rules marked <em>look</em> need judgment. The distances are the plugin’s defaults and can change for a particular figure.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 8%">
+<col style="width: 78%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Rule</th>
+<th>What it says</th>
+<th>Check</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A1</td>
+<td>Each arrow shows one real relationship and points the way the thing moves.</td>
+<td>look</td>
+</tr>
+<tr class="even">
+<td>A2</td>
+<td>If an arrow’s meaning isn’t obvious from its ends, label it on the arrow, not in a legend.</td>
+<td>look</td>
+</tr>
+<tr class="odd">
+<td>A3</td>
+<td>Remove crossings by moving boxes before rerouting lines; aim for none.</td>
+<td>code</td>
+</tr>
+<tr class="even">
+<td>A4</td>
+<td>An unavoidable crossing is at a right angle, away from labels and arrowheads, with a gap or contrasting colours, so it can’t be read as a junction.</td>
+<td>code and look</td>
+</tr>
+<tr class="odd">
+<td>A5</td>
+<td>A line never passes through a box, icon or text it doesn’t connect to, and keeps 8 px from them.</td>
+<td>code</td>
+</tr>
+<tr class="even">
+<td>A6</td>
+<td>Parallel lines stay 8 px apart and never share a path unless they deliberately merge.</td>
+<td>code</td>
+</tr>
+<tr class="odd">
+<td>A7</td>
+<td>Straight or right-angled lines, with at most two bends (three along an outer channel).</td>
+<td>code</td>
+</tr>
+<tr class="even">
+<td>A8</td>
+<td>Arrows meet a box at the middle of a side, on the side facing the flow.</td>
+<td>code</td>
+</tr>
+<tr class="odd">
+<td>A9</td>
+<td>Arrowheads touch the target’s edge, and lines start at the source’s edge.</td>
+<td>code</td>
+</tr>
+<tr class="even">
+<td>A10</td>
+<td>Branches and merges use one trunk and a visible junction dot; a plain crossing never has a dot.</td>
+<td>code and look</td>
+</tr>
+<tr class="odd">
+<td>A11</td>
+<td>The main flow runs one way; return arrows go around the outside.</td>
+<td>look</td>
+</tr>
+<tr class="even">
+<td>A12</td>
+<td>Two-way arrows only for genuinely two-way relationships.</td>
+<td>look</td>
+</tr>
+<tr class="odd">
+<td>A13</td>
+<td>Each line style has one meaning, explained once in a key.</td>
+<td>code</td>
+</tr>
+<tr class="even">
+<td>A14</td>
+<td>Long routes run along open channels, or use labelled connectors such as “to 6”.</td>
+<td>look</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="layout-alignment-and-labels" class="level2">
+<h2 class="anchored" data-anchor-id="layout-alignment-and-labels">Layout, alignment and labels</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 8%">
+<col style="width: 78%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Rule</th>
+<th>What it says</th>
+<th>Check</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>L1</td>
+<td>Boxes in a row or column line up, within 2 px.</td>
+<td>code</td>
+</tr>
+<tr class="even">
+<td>L2</td>
+<td>Equal gaps between stages; bigger gaps between groups than within them.</td>
+<td>code</td>
+</tr>
+<tr class="odd">
+<td>L3</td>
+<td>Boxes are sized to their text at final size; text is never shrunk to fit.</td>
+<td>code</td>
+</tr>
+<tr class="even">
+<td>L4</td>
+<td>Nothing within 12 px of the edge, and nothing clipped.</td>
+<td>code</td>
+</tr>
+<tr class="odd">
+<td>L5</td>
+<td>No crowded region beside a large empty one.</td>
+<td>look</td>
+</tr>
+<tr class="even">
+<td>L6</td>
+<td>Reading order follows the flow; stages are numbered when order matters.</td>
+<td>look</td>
+</tr>
+<tr class="odd">
+<td>T1</td>
+<td>Labels are horizontal.</td>
+<td>code</td>
+</tr>
+<tr class="even">
+<td>T2</td>
+<td>No line runs through text.</td>
+<td>code</td>
+</tr>
+<tr class="odd">
+<td>T3</td>
+<td>Each label sits closest to what it names.</td>
+<td>code</td>
+</tr>
+<tr class="even">
+<td>T4</td>
+<td>Text meets the destination’s minimum size: 8 pt in print, about 11 px on screen.</td>
+<td>code</td>
+</tr>
+</tbody>
+</table>
+<p>These rules are the plugin’s own synthesis, not a published standard. They restate the principles on this page and the <a href="../reference/style.html#lessons-from-earlier-figures">lessons from earlier figures</a>, add common diagramming conventions, and were adjusted after checking them against the TransplantID reference, which uses contrasting colours at crossings and long routes along open channels. Bang Wong’s <em>Points of View</em> columns in <em>Nature Methods</em>, such as <a href="https://doi.org/10.1038/nmeth.1676">“Arrows”</a> and <a href="https://doi.org/10.1038/nmeth.1711">“Layout”</a> (both 2011), are related reading that hasn’t yet been checked against these rules.</p>
 </section>
 <section id="hierarchy-and-grouping" class="level2">
 <h2 class="anchored" data-anchor-id="hierarchy-and-grouping">Hierarchy and grouping</h2>

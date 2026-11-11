@@ -54,7 +54,7 @@
     "href": "reference/checklist.html",
     "title": "Inspection checklist",
     "section": "",
-    "text": "Written for version 0.1.5. Source: inspection-checklist.md.\nThe assistant runs these checks on the rendered figure before showing it to you. They add no extra approval steps; How it works sets those.",
+    "text": "Written for version 0.1.6. Source: inspection-checklist.md.\nThe assistant runs these checks on the rendered figure before showing it to you. They add no extra approval steps; How it works sets those.",
     "crumbs": [
       "What the plugin reads",
       "Inspection checklist"
@@ -76,7 +76,7 @@
     "href": "reference/checklist.html#geometry-checked-by-code-where-practical",
     "title": "Inspection checklist",
     "section": "Geometry, checked by code where practical",
-    "text": "Geometry, checked by code where practical\n\nText and images fit their boxes and the canvas, with nothing clipped or overlapping.\nNo collisions between text and icons, labels and arrows, or arrows and boxes, apart from intended arrow ends.\nJunctions, arrowheads, crossings, reversals and avoidable bends are inspected.\nColumns line up; padding and spacing are consistent.\nThe SVG parses, every referenced asset exists, and exports match the current source.\n\nA passing geometry check isn’t proof of good design, and a trivial edit doesn’t need a test harness.",
+    "text": "Geometry, checked by code where practical\n\nText and images fit their boxes and the canvas, with nothing clipped or overlapping.\nNo collisions between text and icons, labels and arrows, or arrows and boxes, apart from intended arrow ends (rules A5, A6 and T2).\nJunctions, arrowheads, crossings, reversals and avoidable bends are inspected (A3, A4, A7, A9, A10 and A11).\nColumns line up; padding and spacing are consistent (L1, L2 and L4).\nEvery connector, layout and label rule on Design principles is applied, and each finding names the rule it breaks. After a revision, the rules are re-checked for everything that moved and its neighbours.\nThe SVG parses, every referenced asset exists, and exports match the current source.\n\nA passing geometry check isn’t proof of good design, and a trivial edit doesn’t need a test harness.",
     "crumbs": [
       "What the plugin reads",
       "Inspection checklist"
@@ -120,7 +120,7 @@
     "href": "reference/principles.html",
     "title": "Design principles",
     "section": "",
-    "text": "Written for version 0.1.5. Source: design-principles.md.\nThese are practical uses of established guidance, not rigid rules about appearance. The plugin uses them to find specific communication problems, never to strip out needed content or restyle a figure you’ve accepted.",
+    "text": "Written for version 0.1.6. Source: design-principles.md.\nThese are practical uses of established guidance, not rigid rules about appearance. The plugin uses them to find specific communication problems, never to strip out needed content or restyle a figure you’ve accepted.",
     "crumbs": [
       "What the plugin reads",
       "Design principles"
@@ -132,6 +132,28 @@
     "title": "Design principles",
     "section": "Composition before decoration",
     "text": "Composition before decoration\nChoose an orientation and reading order that show the relationships. Steps in sequence line up; equivalent inputs get equal weight; exceptions sit beside the step they affect. Leave room for branching and merging arrows before placing boxes. Avoid unnecessary crossings, bends and reversals. Use clear junctions and arrowheads; two things being close together must not be the only sign that they’re related.\nBackground: yWorks on layered graph layout and orthogonal edge routing. These describe the ideas; the plugin doesn’t need their software, and automatic layouts still have to be inspected.",
+    "crumbs": [
+      "What the plugin reads",
+      "Design principles"
+    ]
+  },
+  {
+    "objectID": "reference/principles.html#connectors-and-arrows",
+    "href": "reference/principles.html#connectors-and-arrows",
+    "title": "Design principles",
+    "section": "Connectors and arrows",
+    "text": "Connectors and arrows\nVersion 0.1.6 turns the principles above into numbered rules, so a check or a reviewer can cite the rule a figure breaks. The assistant applies them when drawing, and again after any revision that moves a box or a line. Rules marked code can be checked by a script on the rendered SVG; rules marked look need judgment. The distances are the plugin’s defaults and can change for a particular figure.\n\n\n\n\n\n\n\n\nRule\nWhat it says\nCheck\n\n\n\n\nA1\nEach arrow shows one real relationship and points the way the thing moves.\nlook\n\n\nA2\nIf an arrow’s meaning isn’t obvious from its ends, label it on the arrow, not in a legend.\nlook\n\n\nA3\nRemove crossings by moving boxes before rerouting lines; aim for none.\ncode\n\n\nA4\nAn unavoidable crossing is at a right angle, away from labels and arrowheads, with a gap or contrasting colours, so it can’t be read as a junction.\ncode and look\n\n\nA5\nA line never passes through a box, icon or text it doesn’t connect to, and keeps 8 px from them.\ncode\n\n\nA6\nParallel lines stay 8 px apart and never share a path unless they deliberately merge.\ncode\n\n\nA7\nStraight or right-angled lines, with at most two bends (three along an outer channel).\ncode\n\n\nA8\nArrows meet a box at the middle of a side, on the side facing the flow.\ncode\n\n\nA9\nArrowheads touch the target’s edge, and lines start at the source’s edge.\ncode\n\n\nA10\nBranches and merges use one trunk and a visible junction dot; a plain crossing never has a dot.\ncode and look\n\n\nA11\nThe main flow runs one way; return arrows go around the outside.\nlook\n\n\nA12\nTwo-way arrows only for genuinely two-way relationships.\nlook\n\n\nA13\nEach line style has one meaning, explained once in a key.\ncode\n\n\nA14\nLong routes run along open channels, or use labelled connectors such as “to 6”.\nlook",
+    "crumbs": [
+      "What the plugin reads",
+      "Design principles"
+    ]
+  },
+  {
+    "objectID": "reference/principles.html#layout-alignment-and-labels",
+    "href": "reference/principles.html#layout-alignment-and-labels",
+    "title": "Design principles",
+    "section": "Layout, alignment and labels",
+    "text": "Layout, alignment and labels\n\n\n\n\n\n\n\n\nRule\nWhat it says\nCheck\n\n\n\n\nL1\nBoxes in a row or column line up, within 2 px.\ncode\n\n\nL2\nEqual gaps between stages; bigger gaps between groups than within them.\ncode\n\n\nL3\nBoxes are sized to their text at final size; text is never shrunk to fit.\ncode\n\n\nL4\nNothing within 12 px of the edge, and nothing clipped.\ncode\n\n\nL5\nNo crowded region beside a large empty one.\nlook\n\n\nL6\nReading order follows the flow; stages are numbered when order matters.\nlook\n\n\nT1\nLabels are horizontal.\ncode\n\n\nT2\nNo line runs through text.\ncode\n\n\nT3\nEach label sits closest to what it names.\ncode\n\n\nT4\nText meets the destination’s minimum size: 8 pt in print, about 11 px on screen.\ncode\n\n\n\nThese rules are the plugin’s own synthesis, not a published standard. They restate the principles on this page and the lessons from earlier figures, add common diagramming conventions, and were adjusted after checking them against the TransplantID reference, which uses contrasting colours at crossings and long routes along open channels. Bang Wong’s Points of View columns in Nature Methods, such as “Arrows” and “Layout” (both 2011), are related reading that hasn’t yet been checked against these rules.",
     "crumbs": [
       "What the plugin reads",
       "Design principles"
