@@ -234,11 +234,13 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#composition-before-decoration" id="toc-composition-before-decoration" class="nav-link active" data-scroll-target="#composition-before-decoration">Composition before decoration</a></li>
+  <li><a href="#applying-the-rules" id="toc-applying-the-rules" class="nav-link" data-scroll-target="#applying-the-rules">Applying the rules</a></li>
   <li><a href="#connectors-and-arrows" id="toc-connectors-and-arrows" class="nav-link" data-scroll-target="#connectors-and-arrows">Connectors and arrows</a></li>
   <li><a href="#layout-alignment-and-labels" id="toc-layout-alignment-and-labels" class="nav-link" data-scroll-target="#layout-alignment-and-labels">Layout, alignment and labels</a></li>
   <li><a href="#hierarchy-and-grouping" id="toc-hierarchy-and-grouping" class="nav-link" data-scroll-target="#hierarchy-and-grouping">Hierarchy and grouping</a></li>
   <li><a href="#text-illustrations-and-shared-objects" id="toc-text-illustrations-and-shared-objects" class="nav-link" data-scroll-target="#text-illustrations-and-shared-objects">Text, illustrations and shared objects</a></li>
   <li><a href="#audience-and-medium" id="toc-audience-and-medium" class="nav-link" data-scroll-target="#audience-and-medium">Audience and medium</a></li>
+  <li><a href="#sources-and-scope" id="toc-sources-and-scope" class="nav-link" data-scroll-target="#sources-and-scope">Sources and scope</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/VagishHemmige/figure-design/edit/main/site/reference/principles.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/VagishHemmige/figure-design/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -264,172 +266,59 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><em>Written for version 0.1.6. Source: <a href="https://github.com/VagishHemmige/figure-design/blob/main/plugin/skills/figure-to-interactive/references/design-principles.md"><code>design-principles.md</code></a>.</em></p>
+<p><em>Written for version 0.1.7. Source: <a href="https://github.com/VagishHemmige/figure-design/blob/main/plugin/skills/figure-to-interactive/references/design-principles.md"><code>design-principles.md</code></a>.</em></p>
 <p>These are practical uses of established guidance, not rigid rules about appearance. The plugin uses them to find specific communication problems, never to strip out needed content or restyle a figure you’ve accepted.</p>
 <section id="composition-before-decoration" class="level2">
 <h2 class="anchored" data-anchor-id="composition-before-decoration">Composition before decoration</h2>
 <p>Choose an orientation and reading order that show the relationships. Steps in sequence line up; equivalent inputs get equal weight; exceptions sit beside the step they affect. Leave room for branching and merging arrows before placing boxes. Avoid unnecessary crossings, bends and reversals. Use clear junctions and arrowheads; two things being close together must not be the only sign that they’re related.</p>
 <p>Background: yWorks on <a href="https://www.yworks.com/pages/layered-graph-layout.html">layered graph layout</a> and <a href="https://yed.yworks.com/support/manual/layout/router_orthogonal.html">orthogonal edge routing</a>. These describe the ideas; the plugin doesn’t need their software, and automatic layouts still have to be inspected.</p>
 </section>
+<section id="applying-the-rules" class="level2">
+<h2 class="anchored" data-anchor-id="applying-the-rules">Applying the rules</h2>
+<p>Preserve the agreed meaning first. Never alter a relationship merely to pass a geometry check. Apply the rules when drawing and after revisions; cite their IDs in findings. Treat layout thresholds as defaults. Record each justified exception with its rule ID, reason and affected elements. An exception cannot make an incorrect relationship correct or waive a claimed destination/accessibility requirement. An accepted reference is a style anchor, not proof that every detail meets these rules.</p>
+<p>Check tags describe possible methods, not implemented validators:</p>
+<ul>
+<li><strong>[measure]</strong>: a mechanical measurement, given supported geometry and declared associations.</li>
+<li><strong>[review]</strong>: a measurement may flag a candidate problem, but a reviewer decides whether it is a defect.</li>
+<li><strong>[look]</strong>: visual or semantic judgment against the agreed content.</li>
+</ul>
+<p>Before mechanical checks, identify nodes, containing regions, connectors, labels and intentional junctions; associate labels with their owners and connectors with their endpoints. Declare comparable rows/columns/groups and any style key. Unsupported geometry or missing associations mean <strong>not checked</strong>, never pass. Do not infer semantics from proximity alone. A measurement pass does not establish readability or factual correctness.</p>
+<p>Measure after SVG transforms and viewBox scaling at each declared destination size. Here px means final rendered CSS pixels (96 px per inch); print text uses points (72 pt per inch). Raster export DPI is not CSS display size. The 8 px clearances, 12 px margins, 2 px tolerances and bend targets below are plugin defaults, not published standards.</p>
+</section>
 <section id="connectors-and-arrows" class="level2">
 <h2 class="anchored" data-anchor-id="connectors-and-arrows">Connectors and arrows</h2>
-<p>Version 0.1.6 turns the principles above into numbered rules, so a check or a reviewer can cite the rule a figure breaks. The assistant applies them when drawing, and again after any revision that moves a box or a line. Rules marked <em>code</em> can be checked by a script on the rendered SVG; rules marked <em>look</em> need judgment. The distances are the plugin’s defaults and can change for a particular figure.</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 8%">
-<col style="width: 78%">
-<col style="width: 12%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Rule</th>
-<th>What it says</th>
-<th>Check</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>A1</td>
-<td>Each arrow shows one real relationship and points the way the thing moves.</td>
-<td>look</td>
-</tr>
-<tr class="even">
-<td>A2</td>
-<td>If an arrow’s meaning isn’t obvious from its ends, label it on the arrow, not in a legend.</td>
-<td>look</td>
-</tr>
-<tr class="odd">
-<td>A3</td>
-<td>Remove crossings by moving boxes before rerouting lines; aim for none.</td>
-<td>code</td>
-</tr>
-<tr class="even">
-<td>A4</td>
-<td>An unavoidable crossing is at a right angle, away from labels and arrowheads, with a gap or contrasting colours, so it can’t be read as a junction.</td>
-<td>code and look</td>
-</tr>
-<tr class="odd">
-<td>A5</td>
-<td>A line never passes through a box, icon or text it doesn’t connect to, and keeps 8 px from them.</td>
-<td>code</td>
-</tr>
-<tr class="even">
-<td>A6</td>
-<td>Parallel lines stay 8 px apart and never share a path unless they deliberately merge.</td>
-<td>code</td>
-</tr>
-<tr class="odd">
-<td>A7</td>
-<td>Straight or right-angled lines, with at most two bends (three along an outer channel).</td>
-<td>code</td>
-</tr>
-<tr class="even">
-<td>A8</td>
-<td>Arrows meet a box at the middle of a side, on the side facing the flow.</td>
-<td>code</td>
-</tr>
-<tr class="odd">
-<td>A9</td>
-<td>Arrowheads touch the target’s edge, and lines start at the source’s edge.</td>
-<td>code</td>
-</tr>
-<tr class="even">
-<td>A10</td>
-<td>Branches and merges use one trunk and a visible junction dot; a plain crossing never has a dot.</td>
-<td>code and look</td>
-</tr>
-<tr class="odd">
-<td>A11</td>
-<td>The main flow runs one way; return arrows go around the outside.</td>
-<td>look</td>
-</tr>
-<tr class="even">
-<td>A12</td>
-<td>Two-way arrows only for genuinely two-way relationships.</td>
-<td>look</td>
-</tr>
-<tr class="odd">
-<td>A13</td>
-<td>Each line style has one meaning, explained once in a key.</td>
-<td>code</td>
-</tr>
-<tr class="even">
-<td>A14</td>
-<td>Long routes run along open channels, or use labelled connectors such as “to 6”.</td>
-<td>look</td>
-</tr>
-</tbody>
-</table>
+<ul>
+<li><strong>A1 One arrow, one relationship.</strong> Show a real sequence, data flow or dependency with the correct direction. Do not add arrows only to lead the eye. [look]</li>
+<li><strong>A2 Label the relationship.</strong> If meaning is unclear from the endpoints, put a short label beside an identifiable segment, preferably near its middle. Keep the relationship label local; a key may separately explain shared line styles. [look]</li>
+<li><strong>A3 Remove crossings by placement first.</strong> Consider reordering comparable boxes before rerouting; preserve meaningful order and grouping. Aim for no unnecessary crossings. Counting crossings flags candidates, not proof that a layout is wrong. [review]</li>
+<li><strong>A4 Distinguish crossings from junctions.</strong> At unavoidable non-junction crossings, aim for a right angle away from labels, junctions and arrowheads. Use a gap or bridge so connectivity does not depend on hue alone; colour may reinforce it without changing the style key. Record an exception for an accepted reference rather than silently restyling it. [review]</li>
+<li><strong>A5 Avoid unrelated objects.</strong> Do not route through unrelated process nodes, icons or text; default to 8 px clearance. A connector may cross its containing region’s boundary when linking an inside element to an outside element. Declare that boundary crossing and keep it clear of the region’s label; it is not a connection to the region itself. Intentional endpoints are exempt from clearance. [review]</li>
+<li><strong>A6 Keep distinct paths distinct.</strong> Default to 8 px between separate parallel routes. Do not share a segment unless A10 permits a meaningful shared trunk. Declare endpoint approaches and intended branch/merge junctions as exceptions to spacing. [review]</li>
+<li><strong>A7 Prefer simple routes.</strong> Prefer straight or orthogonal routes with few bends and optional rounded corners. Two bends, or three in an outer channel, are review targets, not hard failures. Additional bends or a deliberate curve are acceptable when they better preserve meaning, clearance or an accepted composition; record why. [review]</li>
+<li><strong>A8 Use consistent attachment points.</strong> For ordinary boxes, prefer perpendicular side connections, normally at the midpoint and facing the flow. Multiple connections on one side may use evenly spaced ports. Use declared ports or appropriate boundaries for other shapes and illustrations; do not force every connection onto a midpoint. [review]</li>
+<li><strong>A9 Connect visible endpoints.</strong> For boundary-attached connectors, place the visible arrowhead tip on the declared target boundary within 2 px and start the visible line on the source boundary. Account for marker geometry and stroke width. Do not stop short or bury the tip. Record deliberate gaps or non-box attachment conventions. [review]</li>
+<li><strong>A10 Show real branches and merges.</strong> Use a shared trunk only when the agreed relationship actually branches or merges. Mark its junction clearly with a dot or an unambiguous T; a non-junction crossing has neither. Keep independent flows separate, even when they enter the same process. Never invent a merge to simplify routing. [look]</li>
+<li><strong>A11 Keep the main flow readable.</strong> Prefer left-to-right or top-to-bottom flow where sequence matters. Route feedback around the outside where practical; preserve all necessary feedback relationships. Other topologies may use a different declared reading order. [look]</li>
+<li><strong>A12 Reserve two-way arrows for two-way relationships.</strong> Otherwise use one arrow or two separately identified one-way arrows. [look]</li>
+<li><strong>A13 Give styles consistent meanings.</strong> Use a consistent ordinary-flow style. Explain meaningful variations once in a key and reuse them across views. Check against a declared style-to-meaning map; distinct SVG styles alone cannot establish semantic consistency. Do not invent meaning for purely presentational variation. [review]</li>
+<li><strong>A14 Give long routes open channels.</strong> Consider placing related elements closer without changing meaningful order/grouping. Otherwise route between groups or around the outside. If no clear route exists, use uniquely matched continuation labels at both ends, preserving direction and traceability. [look]</li>
+</ul>
 </section>
 <section id="layout-alignment-and-labels" class="level2">
 <h2 class="anchored" data-anchor-id="layout-alignment-and-labels">Layout, alignment and labels</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 8%">
-<col style="width: 78%">
-<col style="width: 12%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Rule</th>
-<th>What it says</th>
-<th>Check</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>L1</td>
-<td>Boxes in a row or column line up, within 2 px.</td>
-<td>code</td>
-</tr>
-<tr class="even">
-<td>L2</td>
-<td>Equal gaps between stages; bigger gaps between groups than within them.</td>
-<td>code</td>
-</tr>
-<tr class="odd">
-<td>L3</td>
-<td>Boxes are sized to their text at final size; text is never shrunk to fit.</td>
-<td>code</td>
-</tr>
-<tr class="even">
-<td>L4</td>
-<td>Nothing within 12 px of the edge, and nothing clipped.</td>
-<td>code</td>
-</tr>
-<tr class="odd">
-<td>L5</td>
-<td>No crowded region beside a large empty one.</td>
-<td>look</td>
-</tr>
-<tr class="even">
-<td>L6</td>
-<td>Reading order follows the flow; stages are numbered when order matters.</td>
-<td>look</td>
-</tr>
-<tr class="odd">
-<td>T1</td>
-<td>Labels are horizontal.</td>
-<td>code</td>
-</tr>
-<tr class="even">
-<td>T2</td>
-<td>No line runs through text.</td>
-<td>code</td>
-</tr>
-<tr class="odd">
-<td>T3</td>
-<td>Each label sits closest to what it names.</td>
-<td>code</td>
-</tr>
-<tr class="even">
-<td>T4</td>
-<td>Text meets the destination’s minimum size: 8 pt in print, about 11 px on screen.</td>
-<td>code</td>
-</tr>
-</tbody>
-</table>
-<p>These rules are the plugin’s own synthesis, not a published standard. They restate the principles on this page and the <a href="../reference/style.html#lessons-from-earlier-figures">lessons from earlier figures</a>, add common diagramming conventions, and were adjusted after checking them against the TransplantID reference, which uses contrasting colours at crossings and long routes along open channels. Bang Wong’s <em>Points of View</em> columns in <em>Nature Methods</em>, such as <a href="https://doi.org/10.1038/nmeth.1676">“Arrows”</a> and <a href="https://doi.org/10.1038/nmeth.1711">“Layout”</a> (both 2011), are related reading that hasn’t yet been checked against these rules.</p>
+<ul>
+<li><strong>L1 Align comparable items.</strong> Within declared rows or columns of comparable boxes, align centres or edges within 2 px. Do not impose a global grid on unrelated groups, annotations or illustrations. [review]</li>
+<li><strong>L2 Space within groups consistently.</strong> Prefer equal gaps between comparable consecutive stages within a group. Use larger separation between groups where grouping carries meaning. Preserve declared time/distance encodings and intentional unequal spacing. [review]</li>
+<li><strong>L3 Fit boxes to content.</strong> Give comparable items equal size where content allows. Fit containers to text at the destination size; do not shrink labels below that destination’s requirements to force a fit. Declared text bounds can be measured; equal sizing remains contextual. [review]</li>
+<li><strong>L4 Keep content inside the canvas.</strong> Default to 12 px outer clearance for meaningful content and no unintended clipping. Background fills or deliberate bleeds may reach the edge; record exceptions. [measure]</li>
+<li><strong>L5 Balance density.</strong> Avoid a crowded region beside unused space when redistribution would help comprehension. Preserve intentional whitespace and meaningful grouping. [look]</li>
+<li><strong>L6 Match reading order to meaning.</strong> Number stages when sequence matters, without implying a sequence among parallel or unordered elements. [look]</li>
+<li><strong>T1 Prefer horizontal labels.</strong> Flag rotation for review; retain justified destination-specific or accepted-layout exceptions. [review]</li>
+<li><strong>T2 Keep lines out of text.</strong> Put connector labels beside the line or on a background that visibly interrupts it. Measure visible rendered overlap, accounting for masking/backgrounds, rather than treating a hidden path as a collision. [measure]</li>
+<li><strong>T3 Make label ownership unambiguous.</strong> Place labels near what they name; when proximity is ambiguous, use placement, grouping or a leader line. Nearest-object distance can flag a problem only with declared label ownership; it is not an absolute acceptance rule. [review]</li>
+<li><strong>T4 Check text at the destination size.</strong> Use the destination’s actual type-size requirements where supplied. Without them, use the plugin fallback of 8 pt for print or 11 CSS px for screen as a floor, not a guarantee of readability. Record overrides and inspect at actual size, including phone presentation where applicable. Keep terminology and capitalisation consistent. [review]</li>
+</ul>
+<p>After a revision, re-check moved elements, their connected routes and labels, and nearby elements affected by the change. If scaling, typography or global styles change, re-check the whole affected view and its exports.</p>
 </section>
 <section id="hierarchy-and-grouping" class="level2">
 <h2 class="anchored" data-anchor-id="hierarchy-and-grouping">Hierarchy and grouping</h2>
@@ -444,6 +333,52 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="audience-and-medium">Audience and medium</h2>
 <p>Choose the content and the way it’s drawn for the reader and where they’ll see it. The overview has to work before anything is clicked. A large figure scaled down can be technically complete and still unreadable, so inspect it at the size it will be seen, and plan enlarged viewing or section crops when needed.</p>
 <p>Background: Rougier, Droettboom and Bourne, <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003833">“Ten Simple Rules for Better Figures”</a> (<em>PLOS Computational Biology</em>, 2014). That paper is general advice for scientific figures, not a standard for workflow diagrams; the plugin’s checks are its own summary rather than rules quoted from any one source.</p>
+</section>
+<section id="sources-and-scope" class="level2">
+<h2 class="anchored" data-anchor-id="sources-and-scope">Sources and scope</h2>
+<p>The rule IDs and operational wording are this plugin’s synthesis. The following sources were inspected on 11 November 2026; the mapping identifies adapted guidance, not certification that the plugin implements a standard. Keep the illustrated TransplantID style; do not import another source’s aesthetic wholesale.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Source</th>
+<th>Rules informed</th>
+<th>Scope and exceptions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://sbgn.github.io/sbgn/downloads/proposals/PD_L1V3.pdf">SBGN Process Description v1.3, Chapter 4, printed pp.&nbsp;47–50</a></td>
+<td>A3–A6, T1–T3</td>
+<td>Sections 4.2.1–4.2.8 address overlaps and labels; 4.3.1 allows necessary container-boundary crossings; 4.3.2–4.3.3 recommend horizontal/nearby labels and fewer crossings; 4.4 suggests near-right-angle crossings. Historical version, not asserted to be current. Adapt geometry guidance, not biological glyph semantics or its aspect-ratio suggestion.</td>
+</tr>
+<tr class="even">
+<td><a href="https://camunda.com/bpmn/examples/">Camunda BPMN modeling styles</a></td>
+<td>A3, L3, L6; activity/decision labels</td>
+<td>Avoid crossing flows; label activities consistently, phrase decisions as questions, and size comparable tasks consistently. Apply where a process diagram benefits; do not impose BPMN symbols on every explanatory figure.</td>
+</tr>
+<tr class="odd">
+<td><a href="https://drawio-app.com/blog/connector-styles-and-animations-in-draw-io/">draw.io connector guidance</a></td>
+<td>A4</td>
+<td>Line jumps distinguish crossings from junctions. A drawing technique, not a requirement of every notation.</td>
+</tr>
+<tr class="even">
+<td><a href="https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html">W3C use of colour, SC 1.4.1</a></td>
+<td>A4, A13; hierarchy</td>
+<td>Do not rely on hue alone for meaningful distinctions. The gap/bridge rule is this plugin’s chosen way to clarify crossings.</td>
+</tr>
+<tr class="odd">
+<td><a href="https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html">W3C text contrast, SC 1.4.3</a>, and <a href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast">non-text contrast, SC 1.4.11</a></td>
+<td>Typography and meaningful graphical cues</td>
+<td>For web figures claiming AA: ordinary text 4.5:1; large text (at least 18 pt, or 14 pt bold) 3:1; graphical parts needed for understanding generally 3:1 against adjacent colours. Apply the criteria’s exceptions, including relevant decorative/essential content exceptions; not every pastel fill requires 3:1. Record what was measured and visually assess which components are essential. These checks alone do not establish full WCAG conformance.</td>
+</tr>
+<tr class="even">
+<td><a href="https://research-figure-guide.nature.com/figures/preparing-figures-our-specifications/">Nature figure specifications</a></td>
+<td>T4; editable exports</td>
+<td>A destination-specific example: ordinary figure text 5–7 pt and editable vector artwork. Use the actual target publication’s guidance; this is not a universal font-size or illustration-style rule.</td>
+</tr>
+</tbody>
+</table>
+<p>The yWorks, NN/g and Rougier references above remain background for composition and hierarchy. Wong’s <em>Points of View</em> columns are related reading, not verified support for these rules: <a href="https://doi.org/10.1038/nmeth.1676">Arrows</a>, <a href="https://doi.org/10.1038/nmeth.1711">Layout</a>, <a href="https://doi.org/10.1038/nmeth0511-365">The overview figure</a>, and <a href="https://doi.org/10.1038/nmeth1110-863">Gestalt principles</a>.</p>
 
 
 </section>

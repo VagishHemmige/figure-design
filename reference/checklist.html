@@ -263,7 +263,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><em>Written for version 0.1.6. Source: <a href="https://github.com/VagishHemmige/figure-design/blob/main/plugin/skills/figure-to-interactive/references/inspection-checklist.md"><code>inspection-checklist.md</code></a>.</em></p>
+<p><em>Written for version 0.1.7. Source: <a href="https://github.com/VagishHemmige/figure-design/blob/main/plugin/skills/figure-to-interactive/references/inspection-checklist.md"><code>inspection-checklist.md</code></a>.</em></p>
 <p>The assistant runs these checks on the rendered figure before showing it to you. They add no extra approval steps; <a href="../how-it-works.html">How it works</a> sets those.</p>
 <section id="content-and-connections" class="level2">
 <h2 class="anchored" data-anchor-id="content-and-connections">Content and connections</h2>
@@ -279,10 +279,10 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="geometry-checked-by-code-where-practical">Geometry, checked by code where practical</h2>
 <ul>
 <li>Text and images fit their boxes and the canvas, with nothing clipped or overlapping.</li>
-<li>No collisions between text and icons, labels and arrows, or arrows and boxes, apart from intended arrow ends (rules A5, A6 and T2).</li>
+<li>No collisions between text and icons, labels and arrows, or arrows and boxes, apart from intended arrow ends and declared container-boundary crossings (rules A5, A6 and T2).</li>
 <li>Junctions, arrowheads, crossings, reversals and avoidable bends are inspected (A3, A4, A7, A9, A10 and A11).</li>
 <li>Columns line up; padding and spacing are consistent (L1, L2 and L4).</li>
-<li>Every connector, layout and label rule on <a href="../reference/principles.html">Design principles</a> is applied, and each finding names the rule it breaks. After a revision, the rules are re-checked for everything that moved and its neighbours.</li>
+<li>Applicable rules on <a href="../reference/principles.html">Design principles</a> are assessed using their measure, review and look methods; these tags do not mean validators exist. Findings name the rule, associations and justified exceptions. Unsupported or unavailable checks are recorded as not checked, never pass. Revisions trigger checks of moved elements, connected routes/labels and affected neighbours; scaling or global style changes trigger a whole-view check.</li>
 <li>The SVG parses, every referenced asset exists, and exports match the current source.</li>
 </ul>
 <p>A passing geometry check isn’t proof of good design, and a trivial edit doesn’t need a test harness.</p>
@@ -290,7 +290,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="looking-at-it" class="level2">
 <h2 class="anchored" data-anchor-id="looking-at-it">Looking at it</h2>
 <ul>
-<li>At its intended size, the main action is obvious, the start and end are clear, grouping helps, and contrast is enough.</li>
+<li>At its intended size, the main action is obvious, the start and end are clear, grouping helps, and contrast is enough. Use destination requirements and the scoped W3C contrast guidance on <a href="../reference/principles.html">Design principles</a>; a font-size floor does not prove readability.</li>
 <li>No crowded boxes next to large empty areas; fix the layout before adding more arrow routing.</li>
 <li>Illustrations match each other and mean something; logos are genuine.</li>
 <li>Phone width is checked honestly. If it’s illegible, there’s an enlarged view or agreed crops, keeping the approved illustration.</li>
