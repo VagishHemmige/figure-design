@@ -2,7 +2,7 @@
 title: "Design principles"
 ---
 
-*Written for version 0.1.5. Source: [`design-principles.md`](https://github.com/VagishHemmige/figure-design/blob/main/plugin/skills/figure-to-interactive/references/design-principles.md).*
+*Written for version 0.1.6. Source: [`design-principles.md`](https://github.com/VagishHemmige/figure-design/blob/main/plugin/skills/figure-to-interactive/references/design-principles.md).*
 
 These are practical uses of established guidance, not rigid rules about appearance. The plugin uses them to find specific communication problems, never to strip out needed content or restyle a figure you've accepted.
 
@@ -11,6 +11,44 @@ These are practical uses of established guidance, not rigid rules about appearan
 Choose an orientation and reading order that show the relationships. Steps in sequence line up; equivalent inputs get equal weight; exceptions sit beside the step they affect. Leave room for branching and merging arrows before placing boxes. Avoid unnecessary crossings, bends and reversals. Use clear junctions and arrowheads; two things being close together must not be the only sign that they're related.
 
 Background: yWorks on [layered graph layout](https://www.yworks.com/pages/layered-graph-layout.html) and [orthogonal edge routing](https://yed.yworks.com/support/manual/layout/router_orthogonal.html). These describe the ideas; the plugin doesn't need their software, and automatic layouts still have to be inspected.
+
+## Connectors and arrows
+
+Version 0.1.6 turns the principles above into numbered rules, so a check or a reviewer can cite the rule a figure breaks. The assistant applies them when drawing, and again after any revision that moves a box or a line. Rules marked *code* can be checked by a script on the rendered SVG; rules marked *look* need judgment. The distances are the plugin's defaults and can change for a particular figure.
+
+| Rule | What it says | Check |
+|----|-------------------------------------|------|
+| A1 | Each arrow shows one real relationship and points the way the thing moves. | look |
+| A2 | If an arrow's meaning isn't obvious from its ends, label it on the arrow, not in a legend. | look |
+| A3 | Remove crossings by moving boxes before rerouting lines; aim for none. | code |
+| A4 | An unavoidable crossing is at a right angle, away from labels and arrowheads, with a gap or contrasting colours, so it can't be read as a junction. | code and look |
+| A5 | A line never passes through a box, icon or text it doesn't connect to, and keeps 8 px from them. | code |
+| A6 | Parallel lines stay 8 px apart and never share a path unless they deliberately merge. | code |
+| A7 | Straight or right-angled lines, with at most two bends (three along an outer channel). | code |
+| A8 | Arrows meet a box at the middle of a side, on the side facing the flow. | code |
+| A9 | Arrowheads touch the target's edge, and lines start at the source's edge. | code |
+| A10 | Branches and merges use one trunk and a visible junction dot; a plain crossing never has a dot. | code and look |
+| A11 | The main flow runs one way; return arrows go around the outside. | look |
+| A12 | Two-way arrows only for genuinely two-way relationships. | look |
+| A13 | Each line style has one meaning, explained once in a key. | code |
+| A14 | Long routes run along open channels, or use labelled connectors such as "to 6". | look |
+
+## Layout, alignment and labels
+
+| Rule | What it says | Check |
+|----|-------------------------------------|------|
+| L1 | Boxes in a row or column line up, within 2 px. | code |
+| L2 | Equal gaps between stages; bigger gaps between groups than within them. | code |
+| L3 | Boxes are sized to their text at final size; text is never shrunk to fit. | code |
+| L4 | Nothing within 12 px of the edge, and nothing clipped. | code |
+| L5 | No crowded region beside a large empty one. | look |
+| L6 | Reading order follows the flow; stages are numbered when order matters. | look |
+| T1 | Labels are horizontal. | code |
+| T2 | No line runs through text. | code |
+| T3 | Each label sits closest to what it names. | code |
+| T4 | Text meets the destination's minimum size: 8 pt in print, about 11 px on screen. | code |
+
+These rules are the plugin's own synthesis, not a published standard. They restate the principles on this page and the [lessons from earlier figures](style.qmd#lessons-from-earlier-figures), add common diagramming conventions, and were adjusted after checking them against the TransplantID reference, which uses contrasting colours at crossings and long routes along open channels. Bang Wong's *Points of View* columns in *Nature Methods*, such as ["Arrows"](https://doi.org/10.1038/nmeth.1676) and ["Layout"](https://doi.org/10.1038/nmeth.1711) (both 2011), are related reading that hasn't yet been checked against these rules.
 
 ## Hierarchy and grouping
 

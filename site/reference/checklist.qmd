@@ -2,7 +2,7 @@
 title: "Inspection checklist"
 ---
 
-*Written for version 0.1.5. Source: [`inspection-checklist.md`](https://github.com/VagishHemmige/figure-design/blob/main/plugin/skills/figure-to-interactive/references/inspection-checklist.md).*
+*Written for version 0.1.6. Source: [`inspection-checklist.md`](https://github.com/VagishHemmige/figure-design/blob/main/plugin/skills/figure-to-interactive/references/inspection-checklist.md).*
 
 The assistant runs these checks on the rendered figure before showing it to you. They add no extra approval steps; [How it works](../how-it-works.qmd) sets those.
 
@@ -17,9 +17,10 @@ The assistant runs these checks on the rendered figure before showing it to you.
 ## Geometry, checked by code where practical
 
 - Text and images fit their boxes and the canvas, with nothing clipped or overlapping.
-- No collisions between text and icons, labels and arrows, or arrows and boxes, apart from intended arrow ends.
-- Junctions, arrowheads, crossings, reversals and avoidable bends are inspected.
-- Columns line up; padding and spacing are consistent.
+- No collisions between text and icons, labels and arrows, or arrows and boxes, apart from intended arrow ends (rules A5, A6 and T2).
+- Junctions, arrowheads, crossings, reversals and avoidable bends are inspected (A3, A4, A7, A9, A10 and A11).
+- Columns line up; padding and spacing are consistent (L1, L2 and L4).
+- Every connector, layout and label rule on [Design principles](principles.qmd) is applied, and each finding names the rule it breaks. After a revision, the rules are re-checked for everything that moved and its neighbours.
 - The SVG parses, every referenced asset exists, and exports match the current source.
 
 A passing geometry check isn't proof of good design, and a trivial edit doesn't need a test harness.
