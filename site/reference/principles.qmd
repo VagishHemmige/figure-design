@@ -2,7 +2,7 @@
 title: "Design principles"
 ---
 
-*Written for version 0.1.5. Source: [`design-principles.md`](https://github.com/VagishHemmige/figure-design/blob/main/skills/figure-to-interactive/references/design-principles.md).*
+*Written for version 0.1.5. Source: [`design-principles.md`](https://github.com/VagishHemmige/figure-design/blob/main/plugin/skills/figure-to-interactive/references/design-principles.md).*
 
 These are practical uses of established guidance, not rigid rules about appearance. The plugin uses them to find specific communication problems, never to strip out needed content or restyle a figure you've accepted.
 

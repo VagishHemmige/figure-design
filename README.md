@@ -23,12 +23,12 @@ Full steps, and which routes have been tested, are on the [Install page](https:/
 
 | Path | What it is |
 |---|---|
-| `skills/figure-to-interactive/` | The skill: `SKILL.md` (the workflow) and its `references/` |
-| `plugin.json`, `.codex-plugin/`, `.claude-plugin/`, `.agents/` | Manifests and marketplace files for each app |
+| `plugin/` | The plugin, and the only folder an install copies: the skill in `plugin/skills/figure-to-interactive/` (`SKILL.md` and its `references/`), a manifest for each app, and a copy of the license |
+| `.claude-plugin/marketplace.json`, `.agents/plugins/marketplace.json` | Marketplace files that point Claude and Codex at `plugin/` |
 | `site/` | Source of the website (not part of the plugin's instructions) |
 | `.github/` | Publishes the website and checks the manifests agree |
 
-When the version changes, change it in all three `plugin.json` files; a check on every pull request fails if they differ.
+When the version changes, change it in all three `plugin/**/plugin.json` files; a check on every pull request fails if they differ, if a marketplace file stops pointing at `plugin/`, or if `plugin/LICENSE` and `LICENSE` differ.
 
 ## Before you rely on it
 
@@ -36,4 +36,4 @@ The plugin guides an assistant; it does not check your facts. Review what a figu
 
 ## License
 
-The original text and code are MIT licensed; see [LICENSE](LICENSE). That license does not cover `skills/figure-to-interactive/assets/transplantid-explainer.svg`, a reference figure that contains embedded artwork, logos and a font owned by others; see [`reference-assets.md`](skills/figure-to-interactive/references/reference-assets.md).
+The original text and code are MIT licensed; see [LICENSE](LICENSE). That license does not cover `plugin/skills/figure-to-interactive/assets/transplantid-explainer.svg`, a reference figure that contains embedded artwork, logos and a font owned by others; see [`reference-assets.md`](plugin/skills/figure-to-interactive/references/reference-assets.md).

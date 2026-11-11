@@ -2,7 +2,7 @@
 title: "Inspection checklist"
 ---
 
-*Written for version 0.1.5. Source: [`inspection-checklist.md`](https://github.com/VagishHemmige/figure-design/blob/main/skills/figure-to-interactive/references/inspection-checklist.md).*
+*Written for version 0.1.5. Source: [`inspection-checklist.md`](https://github.com/VagishHemmige/figure-design/blob/main/plugin/skills/figure-to-interactive/references/inspection-checklist.md).*
 
 The assistant runs these checks on the rendered figure before showing it to you. They add no extra approval steps; [How it works](../how-it-works.qmd) sets those.
 

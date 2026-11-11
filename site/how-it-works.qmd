@@ -21,4 +21,4 @@ You can skip either checkpoint, but only by saying so. The assistant never assum
 
 ## Where the rules live
 
-The stages above summarise the skill file, [`SKILL.md`](https://github.com/VagishHemmige/figure-design/blob/main/skills/figure-to-interactive/SKILL.md). It is the authoritative version; the [reference pages](reference/style.qmd) explain the principles and checks it relies on.
+The stages above summarise the skill file, [`SKILL.md`](https://github.com/VagishHemmige/figure-design/blob/main/plugin/skills/figure-to-interactive/SKILL.md). It is the authoritative version; the [reference pages](reference/style.qmd) explain the principles and checks it relies on.

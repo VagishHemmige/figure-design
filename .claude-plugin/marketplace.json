@@ -7,7 +7,7 @@
   "plugins": [
     {
       "name": "figure-design",
-      "source": "./",
+      "source": "./plugin",
       "description": "Design static explanatory figures and workflow diagrams, get them approved, then add faithful desktop, touch and keyboard interactivity for Quarto."
     }
   ]
