@@ -22,4 +22,4 @@ The plugin comes from the maintainer's own figures, including the TransplantID w
 
 ## This site
 
-Rendered with Quarto 1.8.25, the version the publish workflow uses. First published by the Publish website action on 10 November 2026 and checked live. The workflow figure on [How it works](how-it-works.qmd) was checked at desktop and phone widths; at phone width its one-line descriptions are small, so the page repeats every stage in text.
+First published by the Publish website action on 10 November 2026 with Quarto 1.8.25, and checked live. Moved to Quarto 1.12.1 the same day (#21): rendered with both versions, every page's text is the same apart from a new "Skip to main content" link and the site title, which 1.8.25 left out of the desktop sidebar; no page scrolls sideways at phone width. The workflow figure on [How it works](how-it-works.qmd) was checked at desktop and phone widths; at phone width its one-line descriptions are small, so the page repeats every stage in text.

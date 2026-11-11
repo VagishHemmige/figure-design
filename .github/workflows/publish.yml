@@ -2,7 +2,7 @@
 # GitHub Pages serves. Runs on every push to main, or by hand from the Actions tab.
 # The pages have no code chunks, so only Quarto is needed, not R or Python.
 # Based on Quarto's GitHub Pages guide and quarto-dev/quarto-actions, and
-# matches the r-analysis-workflow site's workflow.
+# follows the r-analysis-workflow site's workflow (that site still pins 1.8.25).
 
 on:
   workflow_dispatch:
@@ -32,7 +32,7 @@ jobs:
         with:
           # Pinned so a new Quarto release can't change the site unseen.
           # To move to a newer version, change this line in a pull request.
-          version: 1.8.25
+          version: 1.12.1
 
       - name: Render and publish to GitHub Pages
         uses: quarto-dev/quarto-actions/publish@v2
