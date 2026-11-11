@@ -2,7 +2,7 @@
 title: "Inspection checklist"
 ---
 
-*Written for version 0.1.6. Source: [`inspection-checklist.md`](https://github.com/VagishHemmige/figure-design/blob/main/plugin/skills/figure-to-interactive/references/inspection-checklist.md).*
+*Written for version 0.1.7. Source: [`inspection-checklist.md`](https://github.com/VagishHemmige/figure-design/blob/main/plugin/skills/figure-to-interactive/references/inspection-checklist.md).*
 
 The assistant runs these checks on the rendered figure before showing it to you. They add no extra approval steps; [How it works](../how-it-works.qmd) sets those.
 
@@ -17,17 +17,17 @@ The assistant runs these checks on the rendered figure before showing it to you.
 ## Geometry, checked by code where practical
 
 - Text and images fit their boxes and the canvas, with nothing clipped or overlapping.
-- No collisions between text and icons, labels and arrows, or arrows and boxes, apart from intended arrow ends (rules A5, A6 and T2).
+- No collisions between text and icons, labels and arrows, or arrows and boxes, apart from intended arrow ends and declared container-boundary crossings (rules A5, A6 and T2).
 - Junctions, arrowheads, crossings, reversals and avoidable bends are inspected (A3, A4, A7, A9, A10 and A11).
 - Columns line up; padding and spacing are consistent (L1, L2 and L4).
-- Every connector, layout and label rule on [Design principles](principles.qmd) is applied, and each finding names the rule it breaks. After a revision, the rules are re-checked for everything that moved and its neighbours.
+- Applicable rules on [Design principles](principles.qmd) are assessed using their measure, review and look methods; these tags do not mean validators exist. Findings name the rule, associations and justified exceptions. Unsupported or unavailable checks are recorded as not checked, never pass. Revisions trigger checks of moved elements, connected routes/labels and affected neighbours; scaling or global style changes trigger a whole-view check.
 - The SVG parses, every referenced asset exists, and exports match the current source.
 
 A passing geometry check isn't proof of good design, and a trivial edit doesn't need a test harness.
 
 ## Looking at it
 
-- At its intended size, the main action is obvious, the start and end are clear, grouping helps, and contrast is enough.
+- At its intended size, the main action is obvious, the start and end are clear, grouping helps, and contrast is enough. Use destination requirements and the scoped W3C contrast guidance on [Design principles](principles.qmd); a font-size floor does not prove readability.
 - No crowded boxes next to large empty areas; fix the layout before adding more arrow routing.
 - Illustrations match each other and mean something; logos are genuine.
 - Phone width is checked honestly. If it's illegible, there's an enlarged view or agreed crops, keeping the approved illustration.
