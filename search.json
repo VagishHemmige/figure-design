@@ -436,7 +436,7 @@
     "href": "reference/files.html",
     "title": "Files in the plugin",
     "section": "",
-    "text": "Written for version 0.1.5. Browse them on GitHub.\nEverything the assistant reads is in skills/. The other files tell each app how to install it.",
+    "text": "Written for version 0.1.5. Browse them on GitHub.\nThe plugin is the plugin/ folder, and it’s the only part an install copies. Everything the assistant reads is in plugin/skills/; the rest of plugin/ tells each app how to load it. The marketplace files at the top of the repository point both apps at plugin/.",
     "crumbs": [
       "What the plugin reads",
       "Files in the plugin"
@@ -447,7 +447,7 @@
     "href": "reference/files.html#the-skill",
     "title": "Files in the plugin",
     "section": "The skill",
-    "text": "The skill\n\n\n\nFile\nWhat it is\n\n\n\n\nskills/figure-to-interactive/SKILL.md\nThe workflow. This is the authoritative version; the references below support it.\n\n\nreferences/content-intake.md\nThe questions to ask and the per-view outline to confirm.\n\n\nreferences/design-principles.md\nDesign principles and their sources.\n\n\nreferences/inspection-checklist.md\nThe inspection checklist.\n\n\nreferences/reference-assets.md\nHow to use the reference figure and website (the house style).\n\n\nreferences/design-lessons.md\nLessons from earlier figures.\n\n\nassets/transplantid-explainer.svg\nThe reference figure, kept as a private reference (see the house style).\n\n\nagents/openai.yaml\nDisplay name and default prompt for Codex. Claude ignores it.",
+    "text": "The skill\n\n\n\nFile\nWhat it is\n\n\n\n\nplugin/skills/figure-to-interactive/SKILL.md\nThe workflow. This is the authoritative version; the references below support it.\n\n\nreferences/content-intake.md\nThe questions to ask and the per-view outline to confirm.\n\n\nreferences/design-principles.md\nDesign principles and their sources.\n\n\nreferences/inspection-checklist.md\nThe inspection checklist.\n\n\nreferences/reference-assets.md\nHow to use the reference figure and website (the house style).\n\n\nreferences/design-lessons.md\nLessons from earlier figures.\n\n\nassets/transplantid-explainer.svg\nThe reference figure, kept as a private reference (see the house style).\n\n\nagents/openai.yaml\nDisplay name and default prompt for Codex. Claude ignores it.",
     "crumbs": [
       "What the plugin reads",
       "Files in the plugin"
@@ -458,7 +458,7 @@
     "href": "reference/files.html#how-each-app-installs-it",
     "title": "Files in the plugin",
     "section": "How each app installs it",
-    "text": "How each app installs it\n\n\n\n\n\n\n\nFile\nRead by\n\n\n\n\nplugin.json\nOpenAI’s apps. Its extensions.com.openai settings take precedence over the file below.\n\n\n.codex-plugin/plugin.json\nCodex, as a compatibility manifest.\n\n\n.claude-plugin/plugin.json\nClaude.\n\n\n.claude-plugin/marketplace.json\nClaude: lists this repository as a marketplace with one plugin.\n\n\n.agents/plugins/marketplace.json\nCodex: the same, in Codex’s format.\n\n\n\nAll five use the name figure-design. The three plugin.json files also carry the version, 0.1.5; when it changes, change it in all three.",
+    "text": "How each app installs it\n\n\n\n\n\n\n\nFile\nRead by\n\n\n\n\nplugin/plugin.json\nOpenAI’s apps. Its extensions.com.openai settings take precedence over the file below.\n\n\nplugin/.codex-plugin/plugin.json\nCodex, as a compatibility manifest.\n\n\nplugin/.claude-plugin/plugin.json\nClaude.\n\n\n.claude-plugin/marketplace.json\nClaude: lists this repository as a marketplace with one plugin, at ./plugin.\n\n\n.agents/plugins/marketplace.json\nCodex: the same, in Codex’s format.\n\n\nplugin/LICENSE, plugin/README.md\nA copy of the license and a short description, so every installed copy carries them.\n\n\n\nAll five use the name figure-design. The three plugin.json files also carry the version, 0.1.5; when it changes, change it in all three.",
     "crumbs": [
       "What the plugin reads",
       "Files in the plugin"
@@ -469,7 +469,7 @@
     "href": "reference/files.html#not-installed",
     "title": "Files in the plugin",
     "section": "Not installed",
-    "text": "Not installed\nsite/ is the source of this website, and .github/workflows/publish.yml publishes it. .github/workflows/check.yml runs .github/scripts/check_versions.py on every pull request: it fails if the three plugin.json files disagree on name or version, if a marketplace file doesn’t list the plugin, or if a site page claims a newer version than the plugin. None of these is part of the plugin’s instructions.\nREADME.md and LICENSE sit at the top of the repository. The license is MIT for the original text and code; it doesn’t cover the TransplantID reference figure.",
+    "text": "Not installed\nsite/ is the source of this website, and .github/workflows/publish.yml publishes it. .github/workflows/check.yml runs .github/scripts/check_versions.py on every pull request: it fails if the three plugin.json files disagree on name or version, if a marketplace file doesn’t list the plugin or stops pointing at plugin/, if plugin/LICENSE differs from LICENSE, or if a site page claims a newer version than the plugin. None of these is part of the plugin’s instructions.\nREADME.md and LICENSE also sit at the top of the repository, for GitHub. The license is MIT for the original text and code; it doesn’t cover the TransplantID reference figure.",
     "crumbs": [
       "What the plugin reads",
       "Files in the plugin"
@@ -490,7 +490,7 @@
     "href": "testing.html#installing",
     "title": "What’s been tested",
     "section": "Installing",
-    "text": "Installing\n\n\n\n\n\n\n\n\nCheck\nResult\nHow\n\n\n\n\nClaude manifest and marketplace are valid\nPassed\nclaude plugin validate with Claude Code 2.1.322: one warning, no icon. With --profile directory (the checks Anthropic’s plugin directory applies), the first version also lacked a README and a license; both were added on 10 November 2026 and it now passes, still with the icon warning.\n\n\nClaude installs the plugin and loads the skill\nPassed\nAdded the repository folder as a local marketplace, installed figure-design@figure-design, and confirmed the skill figure-to-interactive loaded.\n\n\nCodex lists and installs the plugin\nPassed\nSame, with Codex CLI 0.167.0: the plugin showed as installed, enabled, version 0.1.5, with the skill in its cache.\n\n\nInstalling straight from GitHub\nPassed\nRepeated both installs from VagishHemmige/figure-design on GitHub, using the pull-request branch before it was merged: Claude Code loaded the skill, and Codex showed the plugin as installed, enabled.\n\n\nOne-line Claude Code install (--marketplace)\nPassed\nclaude plugin install figure-design --marketplace VagishHemmige/figure-design from the main branch, Claude Code 2.1.322, after the first merge: added the marketplace and loaded the skill.\n\n\nClaude app (web, desktop, Cowork)\nNot yet\n\n\n\nChatGPT Plugin Creator from this repository\nNot yet\nThe plugin was first built in ChatGPT, not from this repository.",
+    "text": "Installing\n\n\n\n\n\n\n\n\nCheck\nResult\nHow\n\n\n\n\nClaude manifest and marketplace are valid\nPassed\nclaude plugin validate with Claude Code 2.1.322: one warning, no icon. With --profile directory (the checks Anthropic’s plugin directory applies), the first version also lacked a README and a license; both were added on 10 November 2026 and it now passes, still with the icon warning.\n\n\nClaude installs the plugin and loads the skill\nPassed\nAdded the repository folder as a local marketplace, installed figure-design@figure-design, and confirmed the skill figure-to-interactive loaded.\n\n\nCodex lists and installs the plugin\nPassed\nSame, with Codex CLI 0.167.0: the plugin showed as installed, enabled, version 0.1.5, with the skill in its cache.\n\n\nInstalling straight from GitHub\nPassed\nRepeated both installs from VagishHemmige/figure-design on GitHub, using the pull-request branch before it was merged: Claude Code loaded the skill, and Codex showed the plugin as installed, enabled.\n\n\nOne-line Claude Code install (--marketplace)\nPassed\nclaude plugin install figure-design --marketplace VagishHemmige/figure-design from the main branch, Claude Code 2.1.322, after the first merge: added the marketplace and loaded the skill.\n\n\nInstalls copy only the plugin\nPassed\nAfter moving the plugin into plugin/ (#21), installed from the GitHub branch in fresh Claude Code and Codex configurations: each cache held only the three manifests, LICENSE, README.md and skills/, with none of site/ or .github/.\n\n\nClaude app (web, desktop, Cowork)\nNot yet\n\n\n\nChatGPT Plugin Creator from this repository\nNot yet\nThe plugin was first built in ChatGPT, not from this repository.",
     "crumbs": [
       "What's been tested"
     ]

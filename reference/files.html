@@ -260,7 +260,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p><em>Written for version 0.1.5. Browse them on <a href="https://github.com/VagishHemmige/figure-design">GitHub</a>.</em></p>
-<p>Everything the assistant reads is in <code>skills/</code>. The other files tell each app how to install it.</p>
+<p>The plugin is the <code>plugin/</code> folder, and it’s the only part an install copies. Everything the assistant reads is in <code>plugin/skills/</code>; the rest of <code>plugin/</code> tells each app how to load it. The marketplace files at the top of the repository point both apps at <code>plugin/</code>.</p>
 <section id="the-skill" class="level2">
 <h2 class="anchored" data-anchor-id="the-skill">The skill</h2>
 <table class="caption-top table">
@@ -272,27 +272,27 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="https://github.com/VagishHemmige/figure-design/blob/main/skills/figure-to-interactive/SKILL.md"><code>skills/figure-to-interactive/SKILL.md</code></a></td>
+<td><a href="https://github.com/VagishHemmige/figure-design/blob/main/plugin/skills/figure-to-interactive/SKILL.md"><code>plugin/skills/figure-to-interactive/SKILL.md</code></a></td>
 <td>The workflow. This is the authoritative version; the references below support it.</td>
 </tr>
 <tr class="even">
-<td><a href="https://github.com/VagishHemmige/figure-design/blob/main/skills/figure-to-interactive/references/content-intake.md"><code>references/content-intake.md</code></a></td>
+<td><a href="https://github.com/VagishHemmige/figure-design/blob/main/plugin/skills/figure-to-interactive/references/content-intake.md"><code>references/content-intake.md</code></a></td>
 <td>The questions to ask and the per-view outline to confirm.</td>
 </tr>
 <tr class="odd">
-<td><a href="https://github.com/VagishHemmige/figure-design/blob/main/skills/figure-to-interactive/references/design-principles.md"><code>references/design-principles.md</code></a></td>
+<td><a href="https://github.com/VagishHemmige/figure-design/blob/main/plugin/skills/figure-to-interactive/references/design-principles.md"><code>references/design-principles.md</code></a></td>
 <td><a href="../reference/principles.html">Design principles</a> and their sources.</td>
 </tr>
 <tr class="even">
-<td><a href="https://github.com/VagishHemmige/figure-design/blob/main/skills/figure-to-interactive/references/inspection-checklist.md"><code>references/inspection-checklist.md</code></a></td>
+<td><a href="https://github.com/VagishHemmige/figure-design/blob/main/plugin/skills/figure-to-interactive/references/inspection-checklist.md"><code>references/inspection-checklist.md</code></a></td>
 <td>The <a href="../reference/checklist.html">inspection checklist</a>.</td>
 </tr>
 <tr class="odd">
-<td><a href="https://github.com/VagishHemmige/figure-design/blob/main/skills/figure-to-interactive/references/reference-assets.md"><code>references/reference-assets.md</code></a></td>
+<td><a href="https://github.com/VagishHemmige/figure-design/blob/main/plugin/skills/figure-to-interactive/references/reference-assets.md"><code>references/reference-assets.md</code></a></td>
 <td>How to use the reference figure and website (<a href="../reference/style.html">the house style</a>).</td>
 </tr>
 <tr class="even">
-<td><a href="https://github.com/VagishHemmige/figure-design/blob/main/skills/figure-to-interactive/references/design-lessons.md"><code>references/design-lessons.md</code></a></td>
+<td><a href="https://github.com/VagishHemmige/figure-design/blob/main/plugin/skills/figure-to-interactive/references/design-lessons.md"><code>references/design-lessons.md</code></a></td>
 <td>Lessons from earlier figures.</td>
 </tr>
 <tr class="odd">
@@ -321,24 +321,28 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>plugin.json</code></td>
+<td><code>plugin/plugin.json</code></td>
 <td>OpenAI’s apps. Its <code>extensions.com.openai</code> settings take precedence over the file below.</td>
 </tr>
 <tr class="even">
-<td><code>.codex-plugin/plugin.json</code></td>
+<td><code>plugin/.codex-plugin/plugin.json</code></td>
 <td>Codex, as a compatibility manifest.</td>
 </tr>
 <tr class="odd">
-<td><code>.claude-plugin/plugin.json</code></td>
+<td><code>plugin/.claude-plugin/plugin.json</code></td>
 <td>Claude.</td>
 </tr>
 <tr class="even">
 <td><code>.claude-plugin/marketplace.json</code></td>
-<td>Claude: lists this repository as a marketplace with one plugin.</td>
+<td>Claude: lists this repository as a marketplace with one plugin, at <code>./plugin</code>.</td>
 </tr>
 <tr class="odd">
 <td><code>.agents/plugins/marketplace.json</code></td>
 <td>Codex: the same, in Codex’s format.</td>
+</tr>
+<tr class="even">
+<td><code>plugin/LICENSE</code>, <code>plugin/README.md</code></td>
+<td>A copy of the license and a short description, so every installed copy carries them.</td>
 </tr>
 </tbody>
 </table>
@@ -346,8 +350,8 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="not-installed" class="level2">
 <h2 class="anchored" data-anchor-id="not-installed">Not installed</h2>
-<p><code>site/</code> is the source of this website, and <code>.github/workflows/publish.yml</code> publishes it. <code>.github/workflows/check.yml</code> runs <code>.github/scripts/check_versions.py</code> on every pull request: it fails if the three <code>plugin.json</code> files disagree on name or version, if a marketplace file doesn’t list the plugin, or if a site page claims a newer version than the plugin. None of these is part of the plugin’s instructions.</p>
-<p><code>README.md</code> and <code>LICENSE</code> sit at the top of the repository. The license is MIT for the original text and code; it doesn’t cover the TransplantID reference figure.</p>
+<p><code>site/</code> is the source of this website, and <code>.github/workflows/publish.yml</code> publishes it. <code>.github/workflows/check.yml</code> runs <code>.github/scripts/check_versions.py</code> on every pull request: it fails if the three <code>plugin.json</code> files disagree on name or version, if a marketplace file doesn’t list the plugin or stops pointing at <code>plugin/</code>, if <code>plugin/LICENSE</code> differs from <code>LICENSE</code>, or if a site page claims a newer version than the plugin. None of these is part of the plugin’s instructions.</p>
+<p><code>README.md</code> and <code>LICENSE</code> also sit at the top of the repository, for GitHub. The license is MIT for the original text and code; it doesn’t cover the TransplantID reference figure.</p>
 
 
 </section>
