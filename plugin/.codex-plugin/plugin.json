@@ -9,7 +9,7 @@
     "shortDescription": "Static to interactive figures"
   },
   "name": "figure-design",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Vagish\u2019s workflow for polished static explanatory figures and faithful portable interactives.",
   "author": {
     "name": "Vagish Hemmige",
