@@ -10,9 +10,10 @@ The main skill defines when to review and seek approval. This checklist adds no 
 
 ## Geometry: automate where practical
 - Measure rendered text/image bounds against containers and canvas; detect clipping and overlaps.
-- Check text-to-icon, label-to-arrow and arrow-to-node collisions, excluding intentional endpoints.
-- Inspect branch/merge junctions, arrowhead clearance, crossings, reversals and avoidable bends.
-- Check aligned columns, padding and spacing consistency.
+- Check text-to-icon, label-to-arrow and arrow-to-node collisions, excluding intentional endpoints (design-principles.md A5, A6, T2).
+- Inspect branch/merge junctions, arrowhead clearance, crossings, reversals and avoidable bends (A3, A4, A7, A9, A10, A11).
+- Check aligned columns, padding and spacing consistency (L1, L2, L4).
+- Apply every connector, layout and label rule marked [code] or [look] in design-principles.md; cite the rule ID in each finding. After a revision, re-check the rules for everything it moved and its neighbours.
 - Parse SVG, verify referenced assets resolve, and ensure exports match current source.
 Automated checks require explicit tolerances and semantic exceptions; a bounding-box pass is not proof of good design. Do not add a complex test harness for a trivial edit.
 

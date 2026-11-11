@@ -1,7 +1,7 @@
 {
   "name": "figure-design",
   "displayName": "Interactive Figure Design",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Vagish’s workflow for polished static explanatory figures and faithful portable interactives.",
   "author": {
     "name": "Vagish Hemmige"
