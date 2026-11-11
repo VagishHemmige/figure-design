@@ -1,7 +1,7 @@
 # Site about the plugin. The source is this folder. A GitHub Action
 # (.github/workflows/publish.yml) renders it and publishes it to the gh-pages
 # branch, which GitHub Pages serves. Nothing here is installed with the
-# plugin (the plugin is skills/ plus the manifests at the repository root).
+# plugin (the plugin is the plugin/ folder; installs copy only that).
 # Pages are written by hand at the level that changes slowly, and link to the
 # source on GitHub for detail. Each page says which version it was written for.
 # Layout and styles follow the r-analysis-workflow site.

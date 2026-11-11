@@ -2,7 +2,7 @@
 title: "The house style"
 ---
 
-*Written for version 0.1.5. Source: [`reference-assets.md`](https://github.com/VagishHemmige/figure-design/blob/main/skills/figure-to-interactive/references/reference-assets.md) and [`design-lessons.md`](https://github.com/VagishHemmige/figure-design/blob/main/skills/figure-to-interactive/references/design-lessons.md).*
+*Written for version 0.1.5. Source: [`reference-assets.md`](https://github.com/VagishHemmige/figure-design/blob/main/plugin/skills/figure-to-interactive/references/reference-assets.md) and [`design-lessons.md`](https://github.com/VagishHemmige/figure-design/blob/main/plugin/skills/figure-to-interactive/references/design-lessons.md).*
 
 The plugin's default look comes from one real figure: the maintainer's illustrated workflow for an automated curation system for TransplantID.net. Before a substantial new design, the assistant renders and studies it rather than working from a remembered description.
 

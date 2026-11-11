@@ -4,18 +4,18 @@ title: "Files in the plugin"
 
 *Written for version 0.1.5. Browse them on [GitHub](https://github.com/VagishHemmige/figure-design).*
 
-Everything the assistant reads is in `skills/`. The other files tell each app how to install it.
+The plugin is the `plugin/` folder, and it's the only part an install copies. Everything the assistant reads is in `plugin/skills/`; the rest of `plugin/` tells each app how to load it. The marketplace files at the top of the repository point both apps at `plugin/`.
 
 ## The skill
 
 | File | What it is |
 |---|---|
-| [`skills/figure-to-interactive/SKILL.md`](https://github.com/VagishHemmige/figure-design/blob/main/skills/figure-to-interactive/SKILL.md) | The workflow. This is the authoritative version; the references below support it. |
-| [`references/content-intake.md`](https://github.com/VagishHemmige/figure-design/blob/main/skills/figure-to-interactive/references/content-intake.md) | The questions to ask and the per-view outline to confirm. |
-| [`references/design-principles.md`](https://github.com/VagishHemmige/figure-design/blob/main/skills/figure-to-interactive/references/design-principles.md) | [Design principles](principles.qmd) and their sources. |
-| [`references/inspection-checklist.md`](https://github.com/VagishHemmige/figure-design/blob/main/skills/figure-to-interactive/references/inspection-checklist.md) | The [inspection checklist](checklist.qmd). |
-| [`references/reference-assets.md`](https://github.com/VagishHemmige/figure-design/blob/main/skills/figure-to-interactive/references/reference-assets.md) | How to use the reference figure and website ([the house style](style.qmd)). |
-| [`references/design-lessons.md`](https://github.com/VagishHemmige/figure-design/blob/main/skills/figure-to-interactive/references/design-lessons.md) | Lessons from earlier figures. |
+| [`plugin/skills/figure-to-interactive/SKILL.md`](https://github.com/VagishHemmige/figure-design/blob/main/plugin/skills/figure-to-interactive/SKILL.md) | The workflow. This is the authoritative version; the references below support it. |
+| [`references/content-intake.md`](https://github.com/VagishHemmige/figure-design/blob/main/plugin/skills/figure-to-interactive/references/content-intake.md) | The questions to ask and the per-view outline to confirm. |
+| [`references/design-principles.md`](https://github.com/VagishHemmige/figure-design/blob/main/plugin/skills/figure-to-interactive/references/design-principles.md) | [Design principles](principles.qmd) and their sources. |
+| [`references/inspection-checklist.md`](https://github.com/VagishHemmige/figure-design/blob/main/plugin/skills/figure-to-interactive/references/inspection-checklist.md) | The [inspection checklist](checklist.qmd). |
+| [`references/reference-assets.md`](https://github.com/VagishHemmige/figure-design/blob/main/plugin/skills/figure-to-interactive/references/reference-assets.md) | How to use the reference figure and website ([the house style](style.qmd)). |
+| [`references/design-lessons.md`](https://github.com/VagishHemmige/figure-design/blob/main/plugin/skills/figure-to-interactive/references/design-lessons.md) | Lessons from earlier figures. |
 | `assets/transplantid-explainer.svg` | The reference figure, kept as a private reference (see [the house style](style.qmd)). |
 | `agents/openai.yaml` | Display name and default prompt for Codex. Claude ignores it. |
 
@@ -23,16 +23,17 @@ Everything the assistant reads is in `skills/`. The other files tell each app ho
 
 | File | Read by |
 |---|---|
-| `plugin.json` | OpenAI's apps. Its `extensions.com.openai` settings take precedence over the file below. |
-| `.codex-plugin/plugin.json` | Codex, as a compatibility manifest. |
-| `.claude-plugin/plugin.json` | Claude. |
-| `.claude-plugin/marketplace.json` | Claude: lists this repository as a marketplace with one plugin. |
+| `plugin/plugin.json` | OpenAI's apps. Its `extensions.com.openai` settings take precedence over the file below. |
+| `plugin/.codex-plugin/plugin.json` | Codex, as a compatibility manifest. |
+| `plugin/.claude-plugin/plugin.json` | Claude. |
+| `.claude-plugin/marketplace.json` | Claude: lists this repository as a marketplace with one plugin, at `./plugin`. |
 | `.agents/plugins/marketplace.json` | Codex: the same, in Codex's format. |
+| `plugin/LICENSE`, `plugin/README.md` | A copy of the license and a short description, so every installed copy carries them. |
 
 All five use the name `figure-design`. The three `plugin.json` files also carry the version, 0.1.5; when it changes, change it in all three.
 
 ## Not installed
 
-`site/` is the source of this website, and `.github/workflows/publish.yml` publishes it. `.github/workflows/check.yml` runs `.github/scripts/check_versions.py` on every pull request: it fails if the three `plugin.json` files disagree on name or version, if a marketplace file doesn't list the plugin, or if a site page claims a newer version than the plugin. None of these is part of the plugin's instructions.
+`site/` is the source of this website, and `.github/workflows/publish.yml` publishes it. `.github/workflows/check.yml` runs `.github/scripts/check_versions.py` on every pull request: it fails if the three `plugin.json` files disagree on name or version, if a marketplace file doesn't list the plugin or stops pointing at `plugin/`, if `plugin/LICENSE` differs from `LICENSE`, or if a site page claims a newer version than the plugin. None of these is part of the plugin's instructions.
 
-`README.md` and `LICENSE` sit at the top of the repository. The license is MIT for the original text and code; it doesn't cover the TransplantID reference figure.
+`README.md` and `LICENSE` also sit at the top of the repository, for GitHub. The license is MIT for the original text and code; it doesn't cover the TransplantID reference figure.
