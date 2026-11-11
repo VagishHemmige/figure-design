@@ -13,6 +13,7 @@ title: "What's been tested"
 | Codex lists and installs the plugin | Passed | Same, with Codex CLI 0.167.0: the plugin showed as `installed, enabled`, version 0.1.5, with the skill in its cache. |
 | Installing straight from GitHub | Passed | Repeated both installs from `VagishHemmige/figure-design` on GitHub, using the pull-request branch before it was merged: Claude Code loaded the skill, and Codex showed the plugin as `installed, enabled`. |
 | One-line Claude Code install (`--marketplace`) | Passed | `claude plugin install figure-design --marketplace VagishHemmige/figure-design` from the main branch, Claude Code 2.1.322, after the first merge: added the marketplace and loaded the skill. |
+| Installs copy only the plugin | Passed | After moving the plugin into `plugin/` (#21), installed from the GitHub branch in fresh Claude Code and Codex configurations: each cache held only the three manifests, `LICENSE`, `README.md` and `skills/`, with none of `site/` or `.github/`. |
 | Claude app (web, desktop, Cowork) | Not yet | |
 | ChatGPT Plugin Creator from this repository | Not yet | The plugin was first built in ChatGPT, not from this repository. |
 
